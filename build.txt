@@ -1,0 +1,3 @@
+author = scalie, post, drclass
+version = 0.1
+displayName = Lacuna Mod
