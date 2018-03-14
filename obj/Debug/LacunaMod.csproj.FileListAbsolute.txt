@@ -9,3 +9,13 @@ D:\Users\wilne\Documents\GitHub\LacunaMod\obj\Debug\LacunaMod.csprojResolveAssem
 D:\Users\wilne\Documents\GitHub\LacunaMod\obj\Debug\LacunaMod.csproj.CoreCompileInputs.cache
 D:\Users\wilne\Documents\GitHub\LacunaMod\obj\Debug\LacunaMod.dll
 D:\Users\wilne\Documents\GitHub\LacunaMod\obj\Debug\LacunaMod.pdb
+D:\Users\wilne\Documents\My Games\Terraria\ModLoader\Mod Sources\LacunaMod\bin\Debug\LacunaMod.dll
+D:\Users\wilne\Documents\My Games\Terraria\ModLoader\Mod Sources\LacunaMod\bin\Debug\LacunaMod.pdb
+D:\Users\wilne\Documents\My Games\Terraria\ModLoader\Mod Sources\LacunaMod\bin\Debug\Microsoft.Xna.Framework.dll
+D:\Users\wilne\Documents\My Games\Terraria\ModLoader\Mod Sources\LacunaMod\bin\Debug\Microsoft.Xna.Framework.Game.dll
+D:\Users\wilne\Documents\My Games\Terraria\ModLoader\Mod Sources\LacunaMod\bin\Debug\Microsoft.Xna.Framework.Graphics.dll
+D:\Users\wilne\Documents\My Games\Terraria\ModLoader\Mod Sources\LacunaMod\bin\Debug\Microsoft.Xna.Framework.Xact.dll
+D:\Users\wilne\Documents\My Games\Terraria\ModLoader\Mod Sources\LacunaMod\obj\Debug\LacunaMod.csprojResolveAssemblyReference.cache
+D:\Users\wilne\Documents\My Games\Terraria\ModLoader\Mod Sources\LacunaMod\obj\Debug\LacunaMod.csproj.CoreCompileInputs.cache
+D:\Users\wilne\Documents\My Games\Terraria\ModLoader\Mod Sources\LacunaMod\obj\Debug\LacunaMod.dll
+D:\Users\wilne\Documents\My Games\Terraria\ModLoader\Mod Sources\LacunaMod\obj\Debug\LacunaMod.pdb

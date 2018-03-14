@@ -66,13 +66,11 @@
     <Folder Include="Items\Weapons\Ranged\" />
     <Folder Include="Items\Weapons\Summon\" />
     <Folder Include="Items\Weapons\Thrown\" />
-    <Folder Include="NPCs\" />
     <Folder Include="Projectiles\" />
     <Folder Include="Tiles\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>C:\Program Files (x86)\Steam\steamapps\common\Terraria\tModLoaderServer.exe" -build "$(ProjectDir)\
--eac "$(TargetPath)"</PostBuildEvent>
+    <PostBuildEvent>"D:\Program Files (x86)\Steam\steamapps\common\Terraria\tModLoaderServer.exe" -build $(ProjectDir) -eac "$(TargetPath)"</PostBuildEvent>
   </PropertyGroup>
 </Project>
