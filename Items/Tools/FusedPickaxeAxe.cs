@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace LacunaMod.Items.Tools
 {
-    public class FusedPickaxe : QuickTool
+    public class FusedPickaxeAxe : QuickTool
     {
         public override void Data()
         {

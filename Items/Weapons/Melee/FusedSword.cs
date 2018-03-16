@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace LacunaMod.Items.Tools
+namespace LacunaMod.Items.Weapons.Melee
 {
     public class FusedSword : ModItem
     {
@@ -13,7 +13,7 @@ namespace LacunaMod.Items.Tools
 
         public override void SetDefaults()
         {
-            size = new int[] { 46, 46 };
+            item.SetSize(46, 46);
             item.melee = true;
             item.damage = 13;
             item.useTime = 22;

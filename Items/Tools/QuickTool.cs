@@ -16,9 +16,9 @@ namespace LacunaMod.Items.Tools
 
     public class Power
     {
-        public int pickPower;
-        public int axePower;
-        public int hammerPower;
+        public int pickPower = 0;
+        public int axePower = 0;
+        public int hammerPower = 0;
         
         public Power(ToolType tool, int power1, int power2 = 0)
         {
@@ -63,12 +63,14 @@ namespace LacunaMod.Items.Tools
 
         public override void SetStaticDefaults()
         {
+            Data();
             DisplayName.SetDefault(name);
             Tooltip.SetDefault(tooltip);
         }
 
         public override void SetDefaults()
         {
+            Data();
             item.damage = damage;
             item.melee = true;
             item.SetSize(size);

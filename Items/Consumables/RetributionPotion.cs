@@ -20,7 +20,7 @@ namespace LacunaMod.Items.Consumables
             item.healLife = 50;
             item.buffType = mod.BuffType<Buffs.RetributionBuff>();
             item.buffTime = 10;
-            item.value = 15_00;
+            item.value = 1500;
             item.rare = 3;
             item.useStyle = 4;
             item.useTime = 5;

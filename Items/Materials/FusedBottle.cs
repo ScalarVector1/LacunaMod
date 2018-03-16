@@ -10,7 +10,7 @@ namespace LacunaMod.Items.Materials
         {
             name = "Fused Bottle";
             rarity = 3;
-            value = 10_00;
+            value = 1000;
             size = new int[] { 20, 28 };
         }
     }
