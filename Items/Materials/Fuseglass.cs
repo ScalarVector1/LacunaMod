@@ -3,14 +3,14 @@ using Terraria.ModLoader;
 
 namespace LacunaMod.Items.Materials
 {
-    public class FusedFossil : QuickMaterial
+    public class Fuseglass: QuickMaterial
     {
         public override void Data()
         {
-            name = "Fused Fossil";
+            name = "Fuseglass";
             rarity = 2;
-            value = 8;
-            size = new int[] { 32, 32 };
+            value = 15;
+            size = new int[] { 26, 26 };
         }
     }
 }

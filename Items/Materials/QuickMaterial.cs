@@ -23,8 +23,7 @@ namespace LacunaMod.Items.Materials
 
         public override void SetDefaults()
         {
-            item.width = size[0];
-            item.height = size[1];
+            item.SetSize(size);
             item.rare = rarity;
             item.value = value;
         }

@@ -33,7 +33,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="**\*.cs" />
+    <Compile Include="Buffs\RetributionBuff.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Items\Consumables\RetributionPotion.cs" />
+    <Compile Include="Items\LacunaBlossom.cs" />
+    <Compile Include="Items\Materials\FusedBottle.cs" />
+    <Compile Include="Items\Materials\FusedFossil.cs" />
+    <Compile Include="Items\Materials\Fuseglass.cs" />
+    <Compile Include="Items\Materials\QuickMaterial.cs" />
+    <Compile Include="Items\Tools\FusedHammer.cs" />
+    <Compile Include="Items\Tools\FusedPickaxe.cs" />
+    <Compile Include="Items\Tools\FusedPickaxeAxe.cs" />
+    <Compile Include="Items\Tools\QuickTool.cs" />
+    <Compile Include="Items\Weapons\Melee\FusedSword.cs" />
+    <Compile Include="LacunaMod.cs" />
+    <Compile Include="LCPlr.cs" />
+    <Compile Include="LGlbItm.cs" />
+    <Compile Include="NPCs\FusedScarab.cs" />
+    <Compile Include="NPCs\LacunaRift.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="QuickRecipe.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
@@ -58,16 +79,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Buffs\" />
-    <Folder Include="Items\Materials\" />
     <Folder Include="Items\Placeable\" />
     <Folder Include="Items\Weapons\Magic\" />
-    <Folder Include="Items\Weapons\Melee\" />
     <Folder Include="Items\Weapons\Ranged\" />
     <Folder Include="Items\Weapons\Summon\" />
     <Folder Include="Items\Weapons\Thrown\" />
     <Folder Include="Projectiles\" />
     <Folder Include="Tiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Localization\en-US.lang" />
+    <None Include="Localization\es-ES.lang" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
