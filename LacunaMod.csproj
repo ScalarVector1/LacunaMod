@@ -36,6 +36,7 @@
     <Compile Include="Buffs\RetributionBuff.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Items\Accessories\EnchantedThorn.cs" />
+    <Compile Include="Items\Accessories\GlassShell.cs" />
     <Compile Include="Items\Consumables\FuseglassBag.cs" />
     <Compile Include="Items\Consumables\RetributionPotion.cs" />
     <Compile Include="Items\Materials\LacunaBlossom.cs" />

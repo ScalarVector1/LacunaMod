@@ -8,17 +8,18 @@ namespace LacunaMod.Items.Weapons.Magic
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Fuseglass Magic Sword");
+            DisplayName.SetDefault("Crystal Fang");
         }
 
         public override void SetDefaults()
         {
             item.SetSize(32, 46);
             item.magic = true;
-            item.damage = 13;
-            item.useTime = 22;
-            item.useAnimation = 22;
+            item.damage = 25;
+            item.useTime = 34;
+            item.useAnimation = 34;
             item.knockBack = 2f;
+            item.crit = 4;
             item.value = 178;
             item.rare = 2;
         }

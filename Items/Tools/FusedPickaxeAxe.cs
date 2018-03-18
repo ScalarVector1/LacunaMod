@@ -8,10 +8,10 @@ namespace LacunaMod.Items.Tools
     {
         public override void Data()
         {
-            name = "Fuseglass Pickaxe Axe";
-            pow = new Power(ToolType.PickaxeAxe, 50, 50);
+            name = "Fused Multicutter";
+            pow = new Power(ToolType.PickaxeAxe, 80, 80);
             damage = 7;
-            useTime = 18;
+            useTime = 19;
             useAnim = 17;
             value = 123;
             rarity = 2;

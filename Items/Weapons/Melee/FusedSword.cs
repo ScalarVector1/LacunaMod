@@ -8,19 +8,20 @@ namespace LacunaMod.Items.Weapons.Melee
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Fuseglass Sword");
+            DisplayName.SetDefault("Fuseglass Saber");
         }
 
         public override void SetDefaults()
         {
             item.SetSize(46, 46);
             item.melee = true;
-            item.damage = 13;
-            item.useTime = 22;
-            item.useAnimation = 22;
+            item.damage = 15;
+            item.useTime = 18;
+            item.useAnimation = 18;
             item.knockBack = 2f;
             item.value = 134;
             item.rare = 2;
+            item.autoReuse = true;
         }
 
         public override void AddRecipes()

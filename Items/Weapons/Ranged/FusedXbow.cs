@@ -9,7 +9,7 @@ namespace LacunaMod.Items.Weapons.Ranged
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Fuseglass Crossbow");
+            DisplayName.SetDefault("Crystal Sheen");
         }
 
         public override void SetDefaults()
@@ -18,17 +18,17 @@ namespace LacunaMod.Items.Weapons.Ranged
             item.ranged = true;
             item.width = 56;
             item.height = 30;
-            item.useTime = 20;
-            item.useAnimation = 20;
+            item.useTime = 26;
+            item.useAnimation = 26;
             item.useStyle = 5;
             item.noMelee = true; //so the item's animation doesn't do damage
-            item.knockBack = 3;
+            item.knockBack = 6f;
             item.value = 122;
             item.rare = 2;
-            item.autoReuse = true;
             item.shoot = 10; //idk why but all the guns in the vanilla source have this
             item.shootSpeed = 16f;
             item.useAmmo = AmmoID.Arrow;
+            item.crit = 8;
         }
 
         public override void AddRecipes()

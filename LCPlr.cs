@@ -12,10 +12,30 @@ namespace LacunaMod
 
         // Accessories
         public bool enchantedthorn = false;
+        public bool glassshell = false;
 
         public override void ResetEffects()
         {
             retribution = false;
+        }
+
+        public override void UpdateEquips(ref bool wallSpeedBuff, ref bool tileSpeedBuff, ref bool tileRangeBuff)
+        {
+            if (glassshell)
+            {
+                if (player.statLife > (player.statLifeMax2 / 4))
+                {
+                    BoostAllDamage(15f);
+                    player.statDefense -= (int)(player.statDefense * .15);
+                }
+                else if (player.statLife < (player.statLifeMax2 / 4))
+                {
+                    BoostAllDamage(-20f);
+                    player.statDefense -= (int)(player.statDefense * .15);
+                }
+            }
+
+            base.UpdateEquips(ref wallSpeedBuff, ref tileSpeedBuff, ref tileRangeBuff);
         }
 
         public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
