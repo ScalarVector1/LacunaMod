@@ -1,7 +1,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace LacunaMod.Items
+namespace LacunaMod.Items.Materials
 {
 	public class LacunaBlossom : ModItem
 	{

@@ -35,9 +35,10 @@
   <ItemGroup>
     <Compile Include="Buffs\RetributionBuff.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="Items\Accessories\EnchantedThorn.cs" />
     <Compile Include="Items\Consumables\FuseglassBag.cs" />
     <Compile Include="Items\Consumables\RetributionPotion.cs" />
-    <Compile Include="Items\LacunaBlossom.cs" />
+    <Compile Include="Items\Materials\LacunaBlossom.cs" />
     <Compile Include="Items\Materials\FusedBottle.cs" />
     <Compile Include="Items\Materials\FusedFossil.cs" />
     <Compile Include="Items\Materials\Fuseglass.cs" />
@@ -87,10 +88,6 @@
     <Folder Include="Items\Weapons\Summon\" />
     <Folder Include="Items\Weapons\Thrown\" />
     <Folder Include="Tiles\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Localization\en-US.lang" />
-    <None Include="Localization\es-ES.lang" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
