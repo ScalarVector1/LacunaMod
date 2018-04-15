@@ -1,5 +1,6 @@
-﻿using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Audio;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -14,10 +15,9 @@ namespace LacunaMod
         public bool enchantedthorn = false;
         public bool glassshell = false;
 
-        public override void ResetEffects()
-        {
-            retribution = false;
-        }
+        // Armor
+        public bool glasschest = false;
+        public bool glassset = false;
 
         public override void UpdateEquips(ref bool wallSpeedBuff, ref bool tileSpeedBuff, ref bool tileRangeBuff)
         {
@@ -34,16 +34,42 @@ namespace LacunaMod
                     player.statDefense -= (int)(player.statDefense * .15);
                 }
             }
+        }
+        public override bool ConsumeAmmo(Item weapon, Item ammo)
+        {
+            if (glasschest)
+            {
+                if (1 == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return true;
+            }
+            //(Main.rand.Next(1, 21) == 1)
+            // if any more items reduce ammo consume chance, add them above here.
+        }
 
-            base.UpdateEquips(ref wallSpeedBuff, ref tileSpeedBuff, ref tileRangeBuff);
+        public override bool PreHurt(bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
+        {
+            if (glassset)
+            {
+                Main.PlaySound(SoundID.Shatter, player.Center);
+                Main.PlaySound(new LegacySoundStyle(2, 27, Terraria.Audio.SoundType.Sound), player.Center);
+            }
+            return true;
         }
 
         public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
         {
             if (proj.ranged && enchantedthorn)
                 target.AddBuff(BuffID.Poisoned, 12 * 60);
-
-            base.ModifyHitNPCWithProj(proj, target, ref damage, ref knockback, ref crit, ref hitDirection);
         }
 
         public void BoostAllDamage(float percent)
@@ -62,5 +88,12 @@ namespace LacunaMod
             player.magicCrit += percent;
             player.thrownCrit += percent;
         }
+
+        public override void ResetEffects()
+        {
+            retribution = false;
+            glassset = false;
+        }
+
     }
 }
