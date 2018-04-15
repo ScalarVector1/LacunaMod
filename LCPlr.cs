@@ -45,6 +45,10 @@ namespace LacunaMod
                     //Main.NewText("Chest");
                     RealConsumeAmmo = false;
                 }
+                else
+                {
+                    RealConsumeAmmo = true;
+                }
             }
             else
             {
