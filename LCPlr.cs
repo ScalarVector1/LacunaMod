@@ -18,6 +18,7 @@ namespace LacunaMod
         // Armor
         public bool glasschest = false;
         public bool glassset = false;
+        public bool RealConsumeAmmo = true;
 
         public override void UpdateEquips(ref bool wallSpeedBuff, ref bool tileSpeedBuff, ref bool tileRangeBuff)
         {
@@ -39,21 +40,18 @@ namespace LacunaMod
         {
             if (glasschest)
             {
-                if (1 == 1)
+                if (Main.rand.Next(1, 21) == 1)
                 {
-                    return true;
-                }
-                else
-                {
-                    return false;
+                    //Main.NewText("Chest");
+                    RealConsumeAmmo = false;
                 }
             }
             else
             {
-                return true;
+                RealConsumeAmmo = true;
             }
-            //(Main.rand.Next(1, 21) == 1)
             // if any more items reduce ammo consume chance, add them above here.
+            return RealConsumeAmmo;
         }
 
         public override bool PreHurt(bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
@@ -93,6 +91,7 @@ namespace LacunaMod
         {
             retribution = false;
             glassset = false;
+            glasschest = false;
         }
 
     }
