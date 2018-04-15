@@ -19,6 +19,7 @@ namespace LacunaMod
         public bool glasschest = false;
         public bool glassset = false;
         public bool RealConsumeAmmo = true;
+        public int glasstimer = 0;
 
         public override void UpdateEquips(ref bool wallSpeedBuff, ref bool tileSpeedBuff, ref bool tileRangeBuff)
         {
@@ -64,6 +65,15 @@ namespace LacunaMod
             {
                 Main.PlaySound(SoundID.Shatter, player.Center);
                 Main.PlaySound(new LegacySoundStyle(2, 27, Terraria.Audio.SoundType.Sound), player.Center);
+                if (glasstimer == 0)
+                {
+                    Main.PlaySound(SoundID.Item28, player.Center);
+                    for (int i = 0; i < Main.rand.Next(1, 5); i++)
+                    {
+                        Projectile.NewProjectile(player.position.X, player.position.Y, Main.rand.Next(-2, 3), Main.rand.Next(-2, 3), mod.ProjectileType("GlassShard"), 5, 5, player.whoAmI);
+                    }
+                    glasstimer = 180;
+                }
             }
             return true;
         }
@@ -96,7 +106,10 @@ namespace LacunaMod
             retribution = false;
             glassset = false;
             glasschest = false;
+            if (glasstimer > 0)
+            {
+                glasstimer--;
+            }
         }
-
     }
 }
