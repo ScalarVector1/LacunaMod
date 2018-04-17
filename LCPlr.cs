@@ -39,7 +39,7 @@ namespace LacunaMod
         }
         public override bool ConsumeAmmo(Item weapon, Item ammo)
         {
-            if (glasschest)
+            if (glasschest && RealConsumeAmmo == true)
             {
                 if (Main.rand.Next(1, 21) == 1)
                 {
