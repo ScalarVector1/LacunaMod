@@ -5,9 +5,16 @@ using Terraria.ModLoader;
 
 namespace LTEST.Items
 {
-	public class Coka : ModItem
+	public class Necro_Whip : ModItem
+    { 
 
-	{
+                public override void SetStaticDefaults()
+    {
+        DisplayName.SetDefault("Necrotic Lash");
+        Tooltip.SetDefault("Latch onto enemies to stun them");
+    }
+
+	
 		public override void SetDefaults()
 		{
 			item.shootSpeed = 7f;

@@ -5,7 +5,12 @@ using Terraria.ModLoader;
 
 namespace LacunaMod.Items.Weapons.Necrocatalyst
 {
-	public class Necro_Boomerang : ModItem
+    public override void SetStaticDefaults()
+    {
+        DisplayName.SetDefault("Cerulean Crescent");
+        Tooltip.SetDefault("There and back in a flash.");
+    }
+    public class Necro_Boomerang : ModItem
 
 	{
 		public override void SetDefaults()
