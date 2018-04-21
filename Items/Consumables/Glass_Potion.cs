@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace LacunaMod.Items.Consumables
 {
-    public class RetributionPotion : ModItem
+    public class Glass_Potion : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -18,7 +18,7 @@ namespace LacunaMod.Items.Consumables
             item.consumable = true;
             item.potion = true;
             item.healLife = 50;
-            item.buffType = mod.BuffType<Buffs.RetributionBuff>();
+            item.buffType = mod.BuffType<Buffs.Buff_Retribution>();
             item.buffTime = 10;
             item.value = 1500;
             item.rare = 3;
@@ -32,9 +32,9 @@ namespace LacunaMod.Items.Consumables
             QuickRecipe rec = new QuickRecipe(this,
                 new Ingredient[]
                 {
-                    new Ingredient(mod.ItemType("FusedBottle")),
+                    new Ingredient(mod.ItemType("Glass_Bottle")),
                     new Ingredient(ItemID.HealingPotion),
-                    new Ingredient(mod.ItemType("LacunaBlossom"), 5)
+                    new Ingredient(mod.ItemType("Lacuna_Material"), 5)
                 },
                 TileID.Bottles,
                 mod);
