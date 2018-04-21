@@ -13,15 +13,11 @@ namespace LacunaMod.Projectiles.Necro_Items
             projectile.height = 10;
             projectile.friendly = true;
             projectile.melee = true;
-            projectile.penetrate = 5;
+            projectile.penetrate = 1;
             projectile.aiStyle = 3;
             projectile.velocity.X = 1f;
             projectile.velocity.Y = 1f;
             projectile.timeLeft = 50;
-        }
-        public override bool CanHitNPC()
-        {
-            return true;
         }
 
         public override void AI()
