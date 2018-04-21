@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace LTEST.Items
+namespace LacunaMod.Items.Weapons.Necrocatalyst
 {
 	public class Necro_Whip : ModItem
     { 
