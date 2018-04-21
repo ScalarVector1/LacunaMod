@@ -2,7 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace LTEST.Tiles
+namespace LacunaMod.Tiles.Tiles
 {
     public class Glass_Tile_Ore : ModTile
     {

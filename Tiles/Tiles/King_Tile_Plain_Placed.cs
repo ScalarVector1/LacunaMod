@@ -2,7 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace LTEST.Tiles
+namespace LacunaMod.Tiles.Tiles
 {
     public class King_Tile_Plain_Placed : ModTile
     {

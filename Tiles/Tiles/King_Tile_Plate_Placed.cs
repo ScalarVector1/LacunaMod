@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
 
-namespace LTEST.Tiles
+namespace LacunaMod.Tiles.Tiles
 {
     public class King_Tile_Plate_Placed : ModTile
     {
