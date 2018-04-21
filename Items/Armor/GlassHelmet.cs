@@ -1,4 +1,3 @@
-using LacunaMod.Dusts;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Graphics.Shaders;
@@ -36,9 +35,7 @@ namespace LacunaMod.Items.Armor
             player.GetModPlayer<LCPlr>().glassset = true;
             if (Main.rand.NextFloat() < 0.1578947f)
             {
-                Glass_Dust dust;
-                // You need to set position depending on what you are doing. You may need to subtract width/2 and height/2 as well to center the spawn rectangle.
-                Vector2 position = Main.LocalPlayer.Center;
+                Dust.NewDust(player.position, player.width, player.height, mod.DustType("Necro_Dust"), 0.2f, 0.2f);
             }
 
             //bwew
