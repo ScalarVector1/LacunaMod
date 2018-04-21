@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Buffs\RetributionBuff.cs" />
+    <Compile Include="Dusts\Glass_Dust.cs" />
     <Compile Include="Dusts\Necro_Dust.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Items\Accessories\EnchantedThorn.cs" />
@@ -57,6 +58,8 @@
     <Compile Include="Items\Weapons\Magic\FusedMagSword.cs" />
     <Compile Include="Items\Weapons\Melee\FusedFlail.cs" />
     <Compile Include="Items\Weapons\Melee\FusedSword.cs" />
+    <Compile Include="Items\Weapons\Necrocatalyst\Necro_Boomerang.cs" />
+    <Compile Include="Items\Weapons\Necrocatalyst\Necro_Whip.cs" />
     <Compile Include="Items\Weapons\Ranged\FusedXbow.cs" />
     <Compile Include="LacunaMod.cs" />
     <Compile Include="LCPlr.cs" />
@@ -67,6 +70,9 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Projectiles\FusedFlailBall.cs" />
+    <Compile Include="Projectiles\GlassShard.cs" />
+    <Compile Include="Projectiles\Necro_Items\Cok.cs" />
+    <Compile Include="Projectiles\Necro_Items\Necro_Boomerang_Projectile.cs" />
     <Compile Include="QuickRecipe.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -108,6 +114,7 @@
     <Content Include="bin\Debug\Terraria.exe" />
     <Content Include="build.txt" />
     <Content Include="description.txt" />
+    <Content Include="Dusts\Glass_Dust.png" />
     <Content Include="Dusts\Necro_Dust.png" />
     <Content Include="Items\Armor\GlassChestplate.png" />
     <Content Include="Items\Armor\GlassChestplate_Arms.png" />
@@ -120,6 +127,44 @@
     <Content Include="Items\Tileitems\Glass_Ore.png" />
     <Content Include="Items\Tileitems\King_Tile_Plain.png" />
     <Content Include="Items\Tileitems\King_Tile_Plate.png" />
+    <Content Include="Items\Weapons\Fuseglass\Glass_Flail.png" />
+    <Content Include="Items\Weapons\Fuseglass\Glass_Magicsword.png" />
+    <Content Include="Items\Weapons\Fuseglass\Glass_Staff.png" />
+    <Content Include="Items\Weapons\Fuseglass\Glass_Sword.png" />
+    <Content Include="Items\Weapons\Fuseglass\Glass_Xbow.png" />
+    <Content Include="Items\Weapons\King\King_Gun.png" />
+    <Content Include="Items\Weapons\King\King_Spear.png" />
+    <Content Include="Items\Weapons\King\King_Staff.png" />
+    <Content Include="Items\Weapons\King\King_Summon.png" />
+    <Content Include="Items\Weapons\King\King_Sword_1.png" />
+    <Content Include="Items\Weapons\King\King_Sword_2.png" />
+    <Content Include="Items\Weapons\Lacuna\Lacuna_Book.png" />
+    <Content Include="Items\Weapons\Lacuna\Lacuna_Staff.png" />
+    <Content Include="Items\Weapons\Misc\Jungle_Bow.png" />
+    <Content Include="Items\Weapons\Misc\Jungle_Gun.png" />
+    <Content Include="Items\Weapons\Necrocatalyst\Necro_Boomerang.png" />
+    <Content Include="Items\Weapons\Necrocatalyst\Necro_Knife.png" />
+    <Content Include="Items\Weapons\Necrocatalyst\Necro_Spear.png" />
+    <Content Include="Items\Weapons\Necrocatalyst\Necro_Staff.png" />
+    <Content Include="Items\Weapons\Necrocatalyst\Necro_Summon.png" />
+    <Content Include="Items\Weapons\Necrocatalyst\Necro_Sword.png" />
+    <Content Include="Items\Weapons\Necrocatalyst\Necro_Whip.png" />
+    <Content Include="Items\Weapons\Purified\Pure_Bow.png" />
+    <Content Include="Items\Weapons\Purified\Pure_Sword.png" />
+    <Content Include="Projectiles\Ammo\Jungle_Arrow.png" />
+    <Content Include="Projectiles\Ammo\King_Arrow.png" />
+    <Content Include="Projectiles\Boss\Glass_Boss_1.png" />
+    <Content Include="Projectiles\Boss\Glass_Boss_2.png" />
+    <Content Include="Projectiles\FusedFlailBall.png" />
+    <Content Include="Projectiles\FusedFlailBall_Chain.png" />
+    <Content Include="Projectiles\GlassShard.png" />
+    <Content Include="Projectiles\Glass_Items\Glass_Flail_Chain.png" />
+    <Content Include="Projectiles\Glass_Items\Glass_Flail_Head.png" />
+    <Content Include="Projectiles\Glass_Items\Glass_Magicsword.gif" />
+    <Content Include="Projectiles\Glass_Items\Glass_Shard.png" />
+    <Content Include="Projectiles\Necro_Items\Cok.png" />
+    <Content Include="Projectiles\Necro_Items\Necro_Boomerang_Projectile.png" />
+    <Content Include="Projectiles\Necro_Items\Necro_Summon_Projectile.gif" />
     <Content Include="UI\Boss_Icon\Guardian_Icon.png" />
     <Content Include="UI\Hero\Health_Bar_1.png" />
     <Content Include="UI\Hero\Hero_1_Head.png" />
