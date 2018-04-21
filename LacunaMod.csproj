@@ -34,9 +34,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Buffs\RetributionBuff.cs" />
+    <Compile Include="Dusts\Necro_Dust.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Items\Accessories\EnchantedThorn.cs" />
     <Compile Include="Items\Accessories\GlassShell.cs" />
+    <Compile Include="Items\Armor\GlassChestplate.cs" />
+    <Compile Include="Items\Armor\GlassHelmet.cs" />
+    <Compile Include="Items\Armor\GlassLeggings.cs" />
     <Compile Include="Items\Consumables\FuseglassBag.cs" />
     <Compile Include="Items\Consumables\RetributionPotion.cs" />
     <Compile Include="Items\Materials\LacunaBlossom.cs" />
@@ -44,6 +48,9 @@
     <Compile Include="Items\Materials\FusedFossil.cs" />
     <Compile Include="Items\Materials\Fuseglass.cs" />
     <Compile Include="Items\Materials\QuickMaterial.cs" />
+    <Compile Include="Items\Tileitems\Glass_Ore.cs" />
+    <Compile Include="Items\Tileitems\King_Tile_Plain.cs" />
+    <Compile Include="Items\Tileitems\King_Tile_Plate.cs" />
     <Compile Include="Items\Tools\FusedHammer.cs" />
     <Compile Include="Items\Tools\FusedPickaxeAxe.cs" />
     <Compile Include="Items\Tools\QuickTool.cs" />
@@ -85,10 +92,48 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Release\" />
     <Folder Include="Items\Placeable\" />
     <Folder Include="Items\Weapons\Summon\" />
     <Folder Include="Items\Weapons\Thrown\" />
     <Folder Include="Tiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\LacunaMod.dll" />
+    <Content Include="bin\Debug\LacunaMod.pdb" />
+    <Content Include="bin\Debug\Microsoft.Xna.Framework.dll" />
+    <Content Include="bin\Debug\Microsoft.Xna.Framework.Game.dll" />
+    <Content Include="bin\Debug\Microsoft.Xna.Framework.Graphics.dll" />
+    <Content Include="bin\Debug\Microsoft.Xna.Framework.Xact.dll" />
+    <Content Include="bin\Debug\Terraria.exe" />
+    <Content Include="build.txt" />
+    <Content Include="description.txt" />
+    <Content Include="Dusts\Necro_Dust.png" />
+    <Content Include="Items\Armor\GlassChestplate.png" />
+    <Content Include="Items\Armor\GlassChestplate_Arms.png" />
+    <Content Include="Items\Armor\GlassChestplate_Body.png" />
+    <Content Include="Items\Armor\GlassChestplate_FemaleBody.png" />
+    <Content Include="Items\Armor\GlassHelmet.png" />
+    <Content Include="Items\Armor\GlassHelmet_Head.png" />
+    <Content Include="Items\Armor\GlassLeggings.png" />
+    <Content Include="Items\Armor\GlassLeggings_Legs.png" />
+    <Content Include="Items\Tileitems\Glass_Ore.png" />
+    <Content Include="Items\Tileitems\King_Tile_Plain.png" />
+    <Content Include="Items\Tileitems\King_Tile_Plate.png" />
+    <Content Include="UI\Boss_Icon\Guardian_Icon.png" />
+    <Content Include="UI\Hero\Health_Bar_1.png" />
+    <Content Include="UI\Hero\Hero_1_Head.png" />
+    <Content Include="UI\Hero\Level_Text.png" />
+    <Content Include="~~NEEDS ANIMATION~~\Glass_Armor.png" />
+    <Content Include="~~NEEDS ANIMATION~~\Hero_1.png" />
+    <Content Include="~~NEEDS ANIMATION~~\Hero_2_Vulnerable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".vs\LacunaMod\v15\Server\sqlite3\db.lock" />
+    <None Include=".vs\LacunaMod\v15\Server\sqlite3\storage.ide" />
+    <None Include=".vs\LacunaMod\v15\Server\sqlite3\storage.ide-shm" />
+    <None Include=".vs\LacunaMod\v15\Server\sqlite3\storage.ide-wal" />
+    <None Include=".vs\slnx.sqlite" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

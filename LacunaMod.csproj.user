@@ -5,4 +5,7 @@
     <StartProgram>D:\Program Files %28x86%29\Steam\steamapps\common\Terraria\Terraria.exe</StartProgram>
     <StartWorkingDirectory>D:\Program Files %28x86%29\Steam\steamapps\common\Terraria\</StartWorkingDirectory>
   </PropertyGroup>
+  <PropertyGroup>
+    <ProjectView>ShowAllFiles</ProjectView>
+  </PropertyGroup>
 </Project>
