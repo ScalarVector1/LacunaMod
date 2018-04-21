@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace LacunaMod.Items.Materials
 {
-    public class FusedFossil : QuickMaterial
+    public class Glass_Fossil : QuickMaterial
     {
         public override void Data()
         {

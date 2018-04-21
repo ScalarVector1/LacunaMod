@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace LacunaMod.Items.Materials
 {
-    public class FusedBottle : QuickMaterial
+    public class Glass_Bottle : QuickMaterial
     {
         public override void Data()
         {
