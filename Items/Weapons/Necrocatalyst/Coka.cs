@@ -1,4 +1,4 @@
-﻿using LTEST.Projectiles;
+﻿using LacunaMod.Projectiles.Necro_Items;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
