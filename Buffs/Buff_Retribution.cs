@@ -4,12 +4,12 @@ using Terraria.ModLoader;
 
 namespace LacunaMod.Buffs
 {
-    public class RetributionBuff : ModBuff
+    public class Buff_Retribution : ModBuff
     {
         public override void SetDefaults()
         {
             DisplayName.SetDefault("Retribution");
-            Description.SetDefault(""); ///////
+            Description.SetDefault(" 15% Increased outgoing damage"); ///////
             Main.debuff[Type] = false;
             Main.pvpBuff[Type] = true;
             Main.buffNoSave[Type] = true;
