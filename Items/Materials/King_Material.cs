@@ -1,7 +1,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace LTEST.Items
+namespace LacunaMod.Items.Materials
 {
 	public class King_Material : ModItem
 	{

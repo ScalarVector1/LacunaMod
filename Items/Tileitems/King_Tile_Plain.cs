@@ -3,7 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
 
-namespace LTEST.Items
+namespace LacunaMod.Items.Tileitems
 {
     public class King_Tile_Plain : ModItem
     {
@@ -23,7 +23,7 @@ namespace LTEST.Items
             item.useAnimation = 15;
             item.useTime = 10;
             item.useStyle = 1;
-            item.consumable = false;
+            item.consumable = true;
             item.createTile = mod.TileType("King_Tile_Plain_Placed");
         }
         public override void AddRecipes()
