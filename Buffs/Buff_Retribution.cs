@@ -19,7 +19,7 @@ namespace LacunaMod.Buffs
         public override void Update(Player player, ref int buffIndex)
         {
             player.GetModPlayer<LCPlr>().retribution = true;
-            player.GetModPlayer<LCPlr>().BoostAllDamage(1.15f);
+            player.GetModPlayer<LCPlr>().BoostAllDamage(15f);
         }
     }
 }

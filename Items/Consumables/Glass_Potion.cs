@@ -19,7 +19,7 @@ namespace LacunaMod.Items.Consumables
             item.potion = true;
             item.healLife = 50;
             item.buffType = mod.BuffType<Buffs.Buff_Retribution>();
-            item.buffTime = 1000;
+            item.buffTime = 10;
             item.value = 1500;
             item.rare = 3;
             item.useStyle = 4;

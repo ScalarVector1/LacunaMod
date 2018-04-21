@@ -27,12 +27,12 @@ namespace LacunaMod
             {
                 if (player.statLife > (player.statLifeMax2 / 4))
                 {
-                    BoostAllDamage(1.15f);
+                    BoostAllDamage(15f);
                     player.statDefense -= (int)(player.statDefense * .15);
                 }
                 else if (player.statLife < (player.statLifeMax2 / 4))
                 {
-                    BoostAllDamage(0.80f);
+                    BoostAllDamage(-20f);
                     player.statDefense -= (int)(player.statDefense * .15);
                 }
             }
