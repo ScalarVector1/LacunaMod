@@ -20,7 +20,7 @@ namespace LacunaMod.Items.Weapons.Necrocatalyst
 			item.shootSpeed = 7f;
 			item.damage = 1;
 			item.knockBack = 0.001f;
-			item.useStyle = 1;
+			item.useStyle = 5;
 			item.useAnimation = 43;
 			item.useTime = 1;
 			item.width = 40;
