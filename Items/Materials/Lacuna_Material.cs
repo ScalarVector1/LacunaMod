@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace LacunaMod.Items.Materials
 {
-	public class LacunaBlossom : ModItem
+	public class Lacuna_Material : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
