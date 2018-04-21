@@ -3,7 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
 
-namespace LTEST.Items
+namespace LacunaMod.Items.Tileitems
 {
     public class King_Tile_Plate : ModItem
     {
@@ -24,7 +24,7 @@ namespace LTEST.Items
             item.useTime = 10;
             item.useStyle = 1;
             item.consumable = true;
-            item.createTile = mod.TileType("GRAZZ");
+            item.createTile = mod.TileType("King_Tile_Plate_Placed");
         }
 
         public override void AddRecipes()
