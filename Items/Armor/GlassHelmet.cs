@@ -10,7 +10,6 @@ namespace LacunaMod.Items.Armor
 	{
 		public override void SetStaticDefaults()
 		{
-            base.SetStaticDefaults();
             DisplayName.SetDefault("Fuseglass Helmet");
             Tooltip.SetDefault("5% increased ranged crit chance");
         }
