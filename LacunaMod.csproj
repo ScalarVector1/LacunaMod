@@ -55,6 +55,7 @@
     <Compile Include="Items\Tools\FusedHammer.cs" />
     <Compile Include="Items\Tools\FusedPickaxeAxe.cs" />
     <Compile Include="Items\Tools\QuickTool.cs" />
+    <Compile Include="Items\Weapons\Fuseglass\Glass_Sword.cs" />
     <Compile Include="Items\Weapons\Magic\FusedMagSword.cs" />
     <Compile Include="Items\Weapons\Melee\FusedFlail.cs" />
     <Compile Include="Items\Weapons\Melee\FusedSword.cs" />

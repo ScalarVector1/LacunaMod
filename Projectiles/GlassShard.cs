@@ -9,13 +9,12 @@ namespace LacunaMod.Projectiles
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Glass Shard");
-			
         }
 
         public override void SetDefaults()
         {
             projectile.CloneDefaults(ProjectileID.SpikyBall);
-		    projectile.width = 10;
+            projectile.width = 10;
             projectile.height = 12;
         }
     }
