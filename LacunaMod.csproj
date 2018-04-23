@@ -72,6 +72,7 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Projectiles\FusedFlailBall.cs" />
     <Compile Include="Projectiles\GlassShard.cs" />
+    <Compile Include="Projectiles\Misc\Greem.cs" />
     <Compile Include="Projectiles\Necro_Items\Cok.cs" />
     <Compile Include="Projectiles\Necro_Items\Necro_Boomerang_Projectile.cs" />
     <Compile Include="QuickRecipe.cs" />
@@ -117,6 +118,7 @@
     <Content Include="description.txt" />
     <Content Include="Dusts\Glass_Dust.png" />
     <Content Include="Dusts\Necro_Dust.png" />
+    <Content Include="icon.png" />
     <Content Include="Items\Armor\Fuseglass\GlassChestplate.png" />
     <Content Include="Items\Armor\Fuseglass\GlassChestplate_Arms.png" />
     <Content Include="Items\Armor\Fuseglass\GlassChestplate_Body.png" />
@@ -163,6 +165,7 @@
     <Content Include="Projectiles\Glass_Items\Glass_Flail_Head.png" />
     <Content Include="Projectiles\Glass_Items\Glass_Magicsword.gif" />
     <Content Include="Projectiles\Glass_Items\Glass_Shard.png" />
+    <Content Include="Projectiles\Misc\Greem.png" />
     <Content Include="Projectiles\Necro_Items\Cok.png" />
     <Content Include="Projectiles\Necro_Items\Necro_Boomerang_Projectile.png" />
     <Content Include="Projectiles\Necro_Items\Necro_Summon_Projectile.gif" />
