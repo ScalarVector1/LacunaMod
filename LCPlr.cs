@@ -33,6 +33,10 @@ namespace LacunaMod
         private const int TeleCloakCap = 1;
         public int TeleCloak = 0;
 
+
+
+
+
         public override TagCompound Save()
         {
             return new TagCompound {
@@ -48,27 +52,28 @@ namespace LacunaMod
         {
             if (LacunaMod.CloakKey.JustPressed && TeleCloak == 1)
             {
+
                 //Copied form vanilla RoD code
                 Vector2 vector26 = default(Vector2);
                 vector26.X = (float)Main.mouseX + Main.screenPosition.X;
-                if (gravDir == 1f)
+                if (player.gravDir == 1f)
                 {
-                    vector26.Y = (float)Main.mouseY + Main.screenPosition.Y - (float)base.height;
+                    vector26.Y = (float)Main.mouseY + Main.screenPosition.Y - (float)player.height;
                 }
                 else
                 {
                     vector26.Y = Main.screenPosition.Y + (float)Main.screenHeight - (float)Main.mouseY;
                 }
                 float x = vector26.X;
-                x -= (float)(base.width / 2);
+                x -= (float)(player.width / 2);
                 if (vector26.X > 50f && vector26.X < (float)(Main.maxTilesX * 16 - 50) && vector26.Y > 50f && vector26.Y < (float)(Main.maxTilesY * 16 - 50))
                 {
                     int num270 = (int)(vector26.X / 16f);
                     int num271 = (int)(vector26.Y / 16f);
-                    if ((Main.tile[num270, num271].wall != 87 || (double)num271 <= Main.worldSurface || NPC.downedPlantBoss) && !Collision.SolidCollision(vector26, base.width, base.height))
+                    if ((Main.tile[num270, num271].wall != 87 || (double)num271 <= Main.worldSurface || NPC.downedPlantBoss) && !Collision.SolidCollision(vector26, player.width, player.height))
                     {
-                        Teleport(vector26, 1, 0);
-                        NetMessage.SendData(65, -1, -1, null, 0, (float)base.whoAmI, vector26.X, vector26.Y, 1, 0, 0);
+                        player.Teleport(vector26, 1, 0);
+                        NetMessage.SendData(65, -1, -1, null, 0, (float)player.whoAmI, vector26.X, vector26.Y, 1, 0, 0);
 
                     }
                 }
