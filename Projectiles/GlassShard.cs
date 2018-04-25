@@ -16,6 +16,19 @@ namespace LacunaMod.Projectiles
             projectile.CloneDefaults(ProjectileID.SpikyBall);
             projectile.width = 10;
             projectile.height = 12;
+            projectile.timeLeft = 100;
+        }
+        public override void AI()
+        {
+            if (Main.rand.Next(4) == 0)
+            {
+                Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, mod.DustType("Glass_Dust"), projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f);
+            }
+
+
+
+
+
         }
     }
 }

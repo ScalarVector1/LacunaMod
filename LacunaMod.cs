@@ -1,12 +1,27 @@
 using Terraria;
+using Terraria.Graphics.Effects;
+using Terraria.Graphics.Shaders;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
+
+using Microsoft.Xna.Framework;
+using System.Collections.Generic;
+using System.IO;
+using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Graphics;
+
+using Terraria.UI;
+using Terraria.DataStructures;
+using Terraria.GameContent.UI;
+using System;
 
 namespace LacunaMod
 {
 	class LacunaMod : Mod
 	{
-		public LacunaMod()
+        public static ModHotKey CloakKey;
+        public LacunaMod()
 		{
 			Properties = new ModProperties()
 			{
@@ -15,7 +30,10 @@ namespace LacunaMod
 				AutoloadSounds = true
 			};
 		}
-
+        public override void Load()
+        {
+            CloakKey = RegisterHotKey("Teleport", "P");
+        }
         public override void AddRecipeGroups()
         {
             // Gems
@@ -38,6 +56,10 @@ namespace LacunaMod
                     ItemID.SailfishBoots
             });
             RecipeGroup.RegisterGroup("Speed Boots", group);
+        }
+        public override void Unload()
+        {
+            CloakKey = null;
         }
     }
 }

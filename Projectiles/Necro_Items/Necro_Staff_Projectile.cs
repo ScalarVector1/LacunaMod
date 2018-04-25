@@ -15,9 +15,10 @@ namespace LacunaMod.Projectiles.Necro_Items
             projectile.magic = true;
             projectile.penetrate = 4;
             projectile.timeLeft = 200;
+            projectile.aiStyle = 48;
         }
 
-        public override void AI()
+        /*public override void AI()
         {
             if (Main.rand.Next(2) == 0)
             {
@@ -67,7 +68,8 @@ namespace LacunaMod.Projectiles.Necro_Items
             }
         }
     }
+    */
 
-    
-    
+    }
 }
+ 

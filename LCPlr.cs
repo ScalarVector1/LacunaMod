@@ -1,8 +1,16 @@
-using Terraria;
+
 using Terraria.Audio;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
+using Terraria.GameInput;
 
 namespace LacunaMod
 {
@@ -21,19 +29,70 @@ namespace LacunaMod
         public bool RealConsumeAmmo = true;
         public int glasstimer = 0;
 
+        //Testing permanent upgrades
+        private const int TeleCloakCap = 1;
+        public int TeleCloak = 0;
+
+        public override TagCompound Save()
+        {
+            return new TagCompound {
+                {"TeleCloak", TeleCloak},
+            };
+
+        }
+        public override void Load(TagCompound tag)
+        {
+            TeleCloak = tag.GetInt("TeleCloak");
+        }
+        public override void ProcessTriggers(TriggersSet triggersSet)
+        {
+            if (LacunaMod.CloakKey.JustPressed && TeleCloak == 1)
+            {
+                //Copied form vanilla RoD code
+                Vector2 vector26 = default(Vector2);
+                vector26.X = (float)Main.mouseX + Main.screenPosition.X;
+                if (gravDir == 1f)
+                {
+                    vector26.Y = (float)Main.mouseY + Main.screenPosition.Y - (float)base.height;
+                }
+                else
+                {
+                    vector26.Y = Main.screenPosition.Y + (float)Main.screenHeight - (float)Main.mouseY;
+                }
+                float x = vector26.X;
+                x -= (float)(base.width / 2);
+                if (vector26.X > 50f && vector26.X < (float)(Main.maxTilesX * 16 - 50) && vector26.Y > 50f && vector26.Y < (float)(Main.maxTilesY * 16 - 50))
+                {
+                    int num270 = (int)(vector26.X / 16f);
+                    int num271 = (int)(vector26.Y / 16f);
+                    if ((Main.tile[num270, num271].wall != 87 || (double)num271 <= Main.worldSurface || NPC.downedPlantBoss) && !Collision.SolidCollision(vector26, base.width, base.height))
+                    {
+                        Teleport(vector26, 1, 0);
+                        NetMessage.SendData(65, -1, -1, null, 0, (float)base.whoAmI, vector26.X, vector26.Y, 1, 0, 0);
+
+                    }
+                }
+            }
+
+            else if (LacunaMod.CloakKey.JustPressed)
+            {
+                Main.PlaySound(SoundID.Shatter, player.Center);
+            }
+        }
+
         public override void UpdateEquips(ref bool wallSpeedBuff, ref bool tileSpeedBuff, ref bool tileRangeBuff)
         {
             if (glassshell)
             {
                 if (player.statLife > (player.statLifeMax2 / 4))
                 {
-                    BoostAllDamage(1.15f);
-                    player.statDefense -= (int)(player.statDefense * .15);
+                    BoostAllDamage(0.15f);
+                    player.statDefense -= (int)(player.statDefense * .85);
                 }
                 else if (player.statLife < (player.statLifeMax2 / 4))
                 {
                     BoostAllDamage(0.80f);
-                    player.statDefense -= (int)(player.statDefense * .15);
+                    player.statDefense -= (int)(player.statDefense * .85);
                 }
             }
         }
@@ -111,5 +170,6 @@ namespace LacunaMod
                 glasstimer--;
             }
         }
+
     }
 }

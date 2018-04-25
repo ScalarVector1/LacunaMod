@@ -19,7 +19,7 @@ namespace LacunaMod.Dusts
 			dust.rotation += dust.velocity.X * 0.45f;
 			dust.scale *= 0.95f;
 			float light = 0.02f * dust.scale;
-			Lighting.AddLight(dust.position, 0.5f, 0.5f, 1);
+			Lighting.AddLight(dust.position, 0.66f, 0.84f, 0.81f);
 			if (dust.scale < 0.2f)
 			{
 				dust.active = false;

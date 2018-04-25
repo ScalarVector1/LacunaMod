@@ -31,11 +31,12 @@ namespace LacunaMod.Items.Weapons.Fuseglass
         }
         public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
         {
-            int numberProjectiles = 2 + Main.rand.Next(2);
+            int numberProjectiles = 2 + Main.rand.Next(1);
 			{
-				Vector2 perturbedSpeed = new Vector2(player.direction, Main.rand.Next(2,3)).RotatedByRandom(MathHelper.ToRadians(90));
-				Projectile.NewProjectile(player.position.X, player.position.Y, perturbedSpeed.X, perturbedSpeed.Y, mod.ProjectileType("GlassShard"), 5, 5, player.whoAmI);
-			}
+                float speed = 8f;
+                Vector2 direction = (Main.MouseWorld - player.Center).SafeNormalize(-Vector2.UnitY);
+                Projectile.NewProjectile(player .Center, direction * speed, mod.ProjectileType("GlassShard"), 5, 1, player.whoAmI);
+            }
         }
 
         //public override void AddRecipes()
