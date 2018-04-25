@@ -13,12 +13,13 @@ namespace LacunaMod.Items.KeyItems
 
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Press P To teleport!");
+            DisplayName.SetDefault("Zzelera's Cloak");
+            Tooltip.SetDefault("PERMANENTLY Grants the ability to teleport\n Press Q to teleport\n 5 second cooldown");
 		}
 
 		public override void SetDefaults()
 		{
-            item.SetSize(20, 28);
+            item.SetSize(26, 40);
             item.noMelee = true;
             item.consumable = true;
             item.value = 1500;
@@ -30,8 +31,6 @@ namespace LacunaMod.Items.KeyItems
 
 		public override bool CanUseItem(Player player)
 		{
-			// Any mod that changes statLifeMax to be greater than 500 is broken and needs to fix their code.
-			// This check also prevents this item from being used before vanilla health upgrades are maxed out.
 			return player.GetModPlayer<LCPlr>().TeleCloak < 1;
 		}
 

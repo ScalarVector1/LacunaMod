@@ -32,6 +32,7 @@ namespace LacunaMod
         //Testing permanent upgrades
         private const int TeleCloakCap = 1;
         public int TeleCloak = 0;
+        public int teletimer = 0;
 
 
 
@@ -50,10 +51,11 @@ namespace LacunaMod
         }
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
-            if (LacunaMod.CloakKey.JustPressed && TeleCloak == 1)
+            if (LacunaMod.CloakKey.JustPressed && TeleCloak == 1 && teletimer == 0)
             {
 
                 //Copied form vanilla RoD code
+                teletimer = 300;
                 Vector2 vector26 = default(Vector2);
                 vector26.X = (float)Main.mouseX + Main.screenPosition.X;
                 if (player.gravDir == 1f)
@@ -78,11 +80,15 @@ namespace LacunaMod
                     }
                 }
             }
-
-            else if (LacunaMod.CloakKey.JustPressed)
+            else if (LacunaMod.CloakKey.JustPressed && TeleCloak == 1 && teletimer < 0)
             {
                 Main.PlaySound(SoundID.Shatter, player.Center);
             }
+            else if (LacunaMod.CloakKey.JustPressed)
+            {
+
+            }
+ 
         }
 
         public override void UpdateEquips(ref bool wallSpeedBuff, ref bool tileSpeedBuff, ref bool tileRangeBuff)
@@ -173,6 +179,10 @@ namespace LacunaMod
             if (glasstimer > 0)
             {
                 glasstimer--;
+            }
+            if (teletimer > 0)
+            {
+                teletimer--;
             }
         }
 

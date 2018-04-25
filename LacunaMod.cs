@@ -32,7 +32,7 @@ namespace LacunaMod
 		}
         public override void Load()
         {
-            CloakKey = RegisterHotKey("Teleport", "Q");
+            CloakKey = RegisterHotKey("Cloak Teleport", "Q");
         }
         public override void AddRecipeGroups()
         {
