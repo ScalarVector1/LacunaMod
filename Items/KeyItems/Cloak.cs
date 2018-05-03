@@ -1,13 +1,10 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.GameContent.Achievements;
-using Terraria.ID;
+﻿using Terraria;
 using Terraria.ModLoader;
 
 namespace LacunaMod.Items.KeyItems
 {
-	
-	class Cloak : ModItem
+
+    class Cloak : ModItem
 	{
 
 
