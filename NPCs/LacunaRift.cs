@@ -16,8 +16,8 @@ namespace LacunaMod.NPCs
 
         public override void SetDefaults()
         {
-            npc.width = 18;
-            npc.height = 40;
+            npc.width = 80;
+            npc.height = 160;
             npc.damage = 14;
             npc.defense = 6;
             npc.lifeMax = 200;

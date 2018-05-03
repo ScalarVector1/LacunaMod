@@ -1,5 +1,5 @@
-author = scalie, post, drclass
-version = 0.1
+author = scalie, post, drclass, fro
+version = 0.2
 displayName = Lacuna Mod
 buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
 includePDB = true
