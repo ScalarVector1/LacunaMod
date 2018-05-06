@@ -1,1 +1,4 @@
-.vs
+.ide
+.ide-shm
+.ide-wal
+.sqlite
