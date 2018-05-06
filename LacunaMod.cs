@@ -10,10 +10,6 @@ namespace LacunaMod
     class LacunaMod : Mod
 	{
         public static ModHotKey CloakKey;
-
-        //private UserInterface cloakUIprivate;
-        //internal UI.Cloak.CloakUI cloakUIInternal;
-
         public static ModHotKey BoltKey;
 
         public LacunaMod()
@@ -28,36 +24,9 @@ namespace LacunaMod
         public override void Load()
         {
             CloakKey = RegisterHotKey("Cloak Teleport", "Q");
-
-            /*if (!Main.dedServ)
-            {
-                cloakUIInternal = new UI.Cloak.CloakUI();
-                cloakUIInternal.Activate();
-                cloakUIprivate = new UserInterface();
-                cloakUIprivate.SetState(cloakUIInternal);
-            }
-        }
-        public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
-        {
-            int MouseTextIndex = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
-            if (UI.Cloak.CloakUI.visible)
-            {
-                layers.Insert(MouseTextIndex, new LegacyGameInterfaceLayer(
-                "LacunaMod: CloakUI",
-                    delegate
-                    {
-                        if (UI.Cloak.CloakUI.visible)
-                        {
-                            cloakUIInternal.Draw(Main.spriteBatch);
-                        }
-                        return true;
-                    },
-                InterfaceScaleType.UI));
-            }*/
-
             BoltKey = RegisterHotKey("Bolt Smash", "Z");
-
         }
+
         public override void AddRecipeGroups()
         {
             // Gems

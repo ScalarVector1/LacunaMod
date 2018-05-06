@@ -43,16 +43,6 @@ namespace LacunaMod
         public bool Zephyr = false;
         public int ImpactDelay = 0;
 
-
-
-
-
-
-
-
-
-
-
         public override TagCompound Save()
         {
             return new TagCompound {
@@ -65,26 +55,10 @@ namespace LacunaMod
         }
         public override void Load(TagCompound tag)
         {
-
-            TeleCloak = tag.GetBool("TeleCloak");
-            /*if (!Main.dedServ)
-            {
-                if (TeleCloak == true)
-                {
-                    UI.Cloak.CloakUI.visible = true;
-                }
-                else
-                {
-                    UI.Cloak.CloakUI.visible = false;
-                }
-            }*/
-
             TeleCloak = tag.GetBool("TeleCloak");
             Bolt = tag.GetBool("Bolt");
             Zephyr = tag.GetBool("Zephyr");
             Wind = tag.GetBool("Wind");
-
-
         }
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
