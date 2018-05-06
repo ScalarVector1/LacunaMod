@@ -40,6 +40,7 @@ namespace LacunaMod
         public bool Bolt = false;
         public int bolttimer = 0;
         public bool justzapped = false;
+        public bool justzapped2 = false;
         public bool Zephyr = false;
         public int ImpactDelay = 0;
 
@@ -100,52 +101,58 @@ namespace LacunaMod
 
             }
            
-            if (player.TouchedTiles.Count > 0)
-            {
-                Main.PlaySound(SoundID.Item9, player.Center);
-            }
                          
-            if (LacunaMod.BoltKey.JustPressed && Bolt == true && bolttimer == 0 && player.TouchedTiles.Count == 0)// add a solid block test here         
+            if (LacunaMod.BoltKey.JustPressed && Bolt == true && bolttimer == 0 && player.velocity.Y !=0)//if the hotkey is pressed, the upgrade is consumed, bolt is not on cooldown, and the player is not still vertically      
             {
-                justzapped = true;
-                Vector2 vel = new Vector2(0f, 0f);
-                Projectile.NewProjectile(player.Center, vel, mod.ProjectileType("Lightning"), 1, 0f, 0, 0, 1);
-                Main.PlaySound(SoundID.Item9, player.Center);
+                justzapped = true;//for actively zapping
+                justzapped2 = true;//for the whole zap projedure
+                Vector2 vel = new Vector2(0f, 0f);//prep for projectile
+                Projectile.NewProjectile(player.Center, vel, mod.ProjectileType("Lightning"), 1, 0f, 0, 0, 1);//plays the zap effects on player
+                Main.PlaySound(SoundID.Item9, player.Center);//zap sounds at start
             }
             else
             {
             }
-            if (justzapped == true) // tee is a dummy value that counts down while smashing, should be replaced with a test for if the player is on a solid block
+            if (justzapped2 == true)
             {
-                bolttimer = 180;
-                player.maxFallSpeed += 65f;
-                player.velocity.Y += 65f;
-                player.velocity.X = 0;
-                player.controlJump = false;
+                player.noFallDmg = true;    
+            }
+            if (justzapped == true) 
+            {
+                bolttimer = 180;//cooldown set to 180 frames
+                player.maxFallSpeed += 65f;//allow fast falling
+                player.velocity.Y += 65f;//propel downwards
+                player.velocity.X = 0;//stop any horizontal movement
+                player.controlJump = false;//prevents inputs untill landing
                 player.controlDown = false;
                 player.controlLeft = false;
                 player.controlRight = false;
                 player.controlUp = false;
-                ImpactDelay = 2;
+                ImpactDelay = 2;//set value of the impact delay
+                
             }
-                if (player.TouchedTiles.Count > 0 && justzapped == true && ImpactDelay == 0)
+            if (player.TouchedTiles.Count > 0 && justzapped == true && ImpactDelay != 0)//set justzapped to false if they have touched the ground and there is still impact delay
+            {                
+                justzapped = false;//ends the zap and allows movement again
+
+            }
+            if (justzapped == false && justzapped2 == true)//if the player has stopped zapping but is still in the smash projedure
+            {
+                ImpactDelay -= 1;//tick down the delay
+            }
+                if (ImpactDelay == 0 && justzapped2 == true)//if the delay is over and the player is still in the projedure
                 {
-                    Vector2 vel = new Vector2(0f, 0f);
-                    Projectile.NewProjectile(player.Center, vel, mod.ProjectileType("Shock"), 1, 0f, 0, 0, 1);
-                    Main.PlaySound(SoundID.Item14, player.Center);
-                    justzapped = false;
-                    
-                }
+                Vector2 vel = new Vector2(0f, 0f);//prep for projectile
+                Projectile.NewProjectile(player.Center, vel, mod.ProjectileType("Shock"), 1, 0f, 0, 0, 1);//play impact effects on player
+                Main.PlaySound(SoundID.Item14, player.Center);//play impact sound
+                justzapped2 = false;//end the smash procedure
+
+
+            }
 
 
                 
             
-            if (player.TouchedTiles.Count > 0 && justzapped == true && ImpactDelay == 0) 
-            {
-                player.maxFallSpeed -= 65f;
-                player.velocity.Y -= 65f;
-
-            }
 
 
         }
@@ -247,10 +254,8 @@ namespace LacunaMod
             {
                 bolttimer--;
             }
-            if (ImpactDelay > 0)
-            {
-                ImpactDelay--;
-            }
+
+            
 
         }
 
