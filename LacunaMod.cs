@@ -7,6 +7,7 @@ namespace LacunaMod
     class LacunaMod : Mod
 	{
         public static ModHotKey CloakKey;
+        public static ModHotKey BoltKey;
         public LacunaMod()
 		{
 			Properties = new ModProperties()
@@ -19,6 +20,7 @@ namespace LacunaMod
         public override void Load()
         {
             CloakKey = RegisterHotKey("Cloak Teleport", "Q");
+            BoltKey = RegisterHotKey("Bolt Smash", "Z");
         }
         public override void AddRecipeGroups()
         {
@@ -46,6 +48,7 @@ namespace LacunaMod
         public override void Unload()
         {
             CloakKey = null;
+            BoltKey = null;
         }
     }
 }

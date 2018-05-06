@@ -4,14 +4,14 @@ using Terraria.ModLoader;
 namespace LacunaMod.Items.KeyItems
 {
 
-    class Cloak : ModItem
+    class Bolt : ModItem
 	{
 
 
 		public override void SetStaticDefaults()
 		{
-            DisplayName.SetDefault("Zzelera's Cloak");
-            Tooltip.SetDefault("PERMANENTLY Grants the ability to teleport\n Press Q to teleport\n 5 second cooldown");
+            DisplayName.SetDefault("Xel-Val Bolt");
+            Tooltip.SetDefault("PERMANENTLY Grants the ability to lightning smash\n Press Z to smash\n 3 second cooldown");
 		}
 
 		public override void SetDefaults()
@@ -28,12 +28,12 @@ namespace LacunaMod.Items.KeyItems
 
 		public override bool CanUseItem(Player player)
 		{
-			return player.GetModPlayer<LCPlr>().TeleCloak == false;
+			return player.GetModPlayer<LCPlr>().Bolt == false;
 		}
 
 		public override bool UseItem(Player player)
 		{
-			player.GetModPlayer<LCPlr>().TeleCloak = true;
+			player.GetModPlayer<LCPlr>().Bolt = true;
 			return true;
 		}
 
