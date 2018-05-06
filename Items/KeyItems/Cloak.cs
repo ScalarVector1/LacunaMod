@@ -30,11 +30,11 @@ namespace LacunaMod.Items.KeyItems
 		{
 			return player.GetModPlayer<LCPlr>().TeleCloak < 1;
 		}
-
 		public override bool UseItem(Player player)
 		{
 			player.GetModPlayer<LCPlr>().TeleCloak += 1;
-			return true;
+            UI.Cloak.CloakUI.visible = true;
+            return true;
 		}
 
 	}

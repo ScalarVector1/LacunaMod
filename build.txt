@@ -1,4 +1,4 @@
-author = scalie, post, drclass
+author = scalie, post, drclass, fro zen
 version = 0.1
 displayName = Lacuna Mod
 buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*

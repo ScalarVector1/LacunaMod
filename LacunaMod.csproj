@@ -175,6 +175,10 @@
     <Content Include="Projectiles\Necro_Items\Necro_Boomerang_Projectile.png" />
     <Content Include="Projectiles\Necro_Items\Necro_Summon_Projectile.gif" />
     <Content Include="UI\Boss_Icon\Guardian_Icon.png" />
+    <Content Include="UI\Cloak\Cloak.png" />
+    <Content Include="UI\Cloak\Cloak_1.png" />
+    <Content Include="UI\Cloak\Cloak_2.png" />
+    <Content Include="UI\Cloak\Cloak_3.png" />
     <Content Include="UI\Hero\Health_Bar_1.png" />
     <Content Include="UI\Hero\Hero_1_Head.png" />
     <Content Include="UI\Hero\Level_Text.png" />

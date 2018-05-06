@@ -19,3 +19,7 @@ D:\Users\wilne\Documents\My Games\Terraria\ModLoader\Mod Sources\LacunaMod\obj\D
 D:\Users\wilne\Documents\My Games\Terraria\ModLoader\Mod Sources\LacunaMod\obj\Debug\LacunaMod.csproj.CoreCompileInputs.cache
 D:\Users\wilne\Documents\My Games\Terraria\ModLoader\Mod Sources\LacunaMod\obj\Debug\LacunaMod.dll
 D:\Users\wilne\Documents\My Games\Terraria\ModLoader\Mod Sources\LacunaMod\obj\Debug\LacunaMod.pdb
+C:\Users\User\Documents\My Games\Terraria\ModLoader\Mod Sources\LacunaMod\obj\Debug\LacunaMod.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\My Games\Terraria\ModLoader\Mod Sources\LacunaMod\obj\Debug\LacunaMod.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\My Games\Terraria\ModLoader\Mod Sources\LacunaMod\obj\Debug\LacunaMod.dll
+C:\Users\User\Documents\My Games\Terraria\ModLoader\Mod Sources\LacunaMod\obj\Debug\LacunaMod.pdb

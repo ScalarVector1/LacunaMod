@@ -34,10 +34,6 @@ namespace LacunaMod
         public int TeleCloak = 0;
         public int teletimer = 0;
 
-
-
-
-
         public override TagCompound Save()
         {
             return new TagCompound {
@@ -48,6 +44,17 @@ namespace LacunaMod
         public override void Load(TagCompound tag)
         {
             TeleCloak = tag.GetInt("TeleCloak");
+            if (!Main.dedServ)
+            {
+                if (TeleCloak == 1)
+                {
+                    UI.Cloak.CloakUI.visible = true;
+                }
+                else
+                {
+                    UI.Cloak.CloakUI.visible = false;
+                }
+            }
         }
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
