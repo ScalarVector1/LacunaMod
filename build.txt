@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 author = scalie, post, drclass, fro zen
 version = 0.1
+=======
+author = scalie, post, drclass, fro
+version = 0.2
+>>>>>>> 53a53d1fb2693ed22e0243d61feebda7e0803e18
 displayName = Lacuna Mod
 buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
 includePDB = true

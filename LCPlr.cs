@@ -11,6 +11,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.GameInput;
+using System.Linq;
 
 namespace LacunaMod
 {
@@ -30,19 +31,49 @@ namespace LacunaMod
         public int glasstimer = 0;
 
         //Testing permanent upgrades
+        public bool Wind = false;
+        public int windtimer = 0;
         private const int TeleCloakCap = 1;
-        public int TeleCloak = 0;
+        public bool TeleCloak = false;
         public int teletimer = 0;
+        private const int BoltCap = 1;
+        public bool Bolt = false;
+        public int bolttimer = 0;
+        public bool justzapped = false;
+        public bool Zephyr = false;
 
+<<<<<<< HEAD
+=======
+
+
+
+        public bool flag()
+        {
+            if (player.TouchedTiles.Contains(item.type))
+                 {
+                      return true;
+                 }
+            else
+                { 
+                        return false;
+                }
+        }
+
+
+>>>>>>> 53a53d1fb2693ed22e0243d61feebda7e0803e18
         public override TagCompound Save()
         {
             return new TagCompound {
                 {"TeleCloak", TeleCloak},
+                {"Bolt", Bolt},
+                {"Zephyr", Zephyr},
+                {"Wind", Wind}
             };
 
         }
         public override void Load(TagCompound tag)
         {
+<<<<<<< HEAD
             TeleCloak = tag.GetInt("TeleCloak");
             if (!Main.dedServ)
             {
@@ -55,10 +86,17 @@ namespace LacunaMod
                     UI.Cloak.CloakUI.visible = false;
                 }
             }
+=======
+            TeleCloak = tag.GetBool("TeleCloak");
+            Bolt = tag.GetBool("Bolt");
+            Zephyr = tag.GetBool("Zephyr");
+            Wind = tag.GetBool("Wind");
+
+>>>>>>> 53a53d1fb2693ed22e0243d61feebda7e0803e18
         }
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
-            if (LacunaMod.CloakKey.JustPressed && TeleCloak == 1 && teletimer == 0)
+            if (LacunaMod.CloakKey.JustPressed && TeleCloak == true && teletimer == 0)
             {
 
                 //Copied form vanilla RoD code
@@ -87,7 +125,7 @@ namespace LacunaMod
                     }
                 }
             }
-            else if (LacunaMod.CloakKey.JustPressed && TeleCloak == 1 && teletimer < 0)
+            else if (LacunaMod.CloakKey.JustPressed && TeleCloak == true && teletimer > 0)
             {
                 Main.PlaySound(SoundID.Shatter, player.Center);
             }
@@ -95,7 +133,50 @@ namespace LacunaMod
             {
 
             }
- 
+
+                
+                           
+            if (LacunaMod.BoltKey.JustPressed && Bolt == true && bolttimer == 0 && flag == false)// add a solid block test here         
+            {
+                justzapped = true;
+                Vector2 vel = new Vector2(0f, 0f);
+                Projectile.NewProjectile(player.Center, vel, mod.ProjectileType("Lightning"), 1, 0f, 0, 0, 1);
+                Main.PlaySound(SoundID.Item9, player.Center);
+            }
+            else
+            {
+            }
+            if (justzapped == true) // tee is a dummy value that counts down while smashing, should be replaced with a test for if the player is on a solid block
+            {
+                bolttimer = 180;
+                player.maxFallSpeed += 65f;
+                player.velocity.Y += 65f;
+                player.velocity.X = 0;
+                player.controlJump = false;
+                player.controlDown = false;
+                player.controlLeft = false;
+                player.controlRight = false;
+                player.controlUp = false;
+                if (flag == true && justzapped == true)
+                {
+                    Vector2 vel = new Vector2(0f, 0f);
+                    Projectile.NewProjectile(player.Center, vel, mod.ProjectileType("Shock"), 1, 0f, 0, 0, 1);
+                    Main.PlaySound(SoundID.Item14, player.Center);
+                    justzapped = false;
+                    
+                }
+
+
+                
+            }
+            if (flag == true && justzapped == true)
+            {
+                player.maxFallSpeed -= 65f;
+                player.velocity.Y -= 65f;
+
+            }
+
+
         }
 
         public override void UpdateEquips(ref bool wallSpeedBuff, ref bool tileSpeedBuff, ref bool tileRangeBuff)
@@ -191,6 +272,11 @@ namespace LacunaMod
             {
                 teletimer--;
             }
+            if (bolttimer > 0)
+            {
+                bolttimer--;
+            }
+
         }
 
     }
