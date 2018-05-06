@@ -49,20 +49,7 @@ namespace LacunaMod
 
 
 
-<<<<<<< HEAD
-=======
-        public void Contact()
-        {
-            if (player.TouchedTiles.Contains(item.type))
-                 {
-                      flag = true;
-                 }
-            else
-                { 
-                        flag = false;
-                }
-        }
->>>>>>> 2a772b7b09d002385731f9a1654288346ae92f18
+
 
 
 
