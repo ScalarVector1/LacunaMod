@@ -10,12 +10,12 @@ namespace LacunaMod
     class LacunaMod : Mod
 	{
         public static ModHotKey CloakKey;
-<<<<<<< HEAD
+
         private UserInterface cloakUIprivate;
         internal UI.Cloak.CloakUI cloakUIInternal;
-=======
+
         public static ModHotKey BoltKey;
->>>>>>> 53a53d1fb2693ed22e0243d61feebda7e0803e18
+
         public LacunaMod()
 		{
 			Properties = new ModProperties()
@@ -28,7 +28,7 @@ namespace LacunaMod
         public override void Load()
         {
             CloakKey = RegisterHotKey("Cloak Teleport", "Q");
-<<<<<<< HEAD
+
             if (!Main.dedServ)
             {
                 cloakUIInternal = new UI.Cloak.CloakUI();
@@ -54,9 +54,9 @@ namespace LacunaMod
                     },
                 InterfaceScaleType.UI));
             }
-=======
+
             BoltKey = RegisterHotKey("Bolt Smash", "Z");
->>>>>>> 53a53d1fb2693ed22e0243d61feebda7e0803e18
+
         }
         public override void AddRecipeGroups()
         {

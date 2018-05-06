@@ -41,26 +41,26 @@ namespace LacunaMod
         public int bolttimer = 0;
         public bool justzapped = false;
         public bool Zephyr = false;
-
-<<<<<<< HEAD
-=======
+        public bool flag = false;
 
 
 
-        public bool flag()
+
+
+        public void contact()
         {
             if (player.TouchedTiles.Contains(item.type))
                  {
-                      return true;
+                      flag = true;
                  }
             else
                 { 
-                        return false;
+                        flag = false;
                 }
         }
 
 
->>>>>>> 53a53d1fb2693ed22e0243d61feebda7e0803e18
+
         public override TagCompound Save()
         {
             return new TagCompound {
@@ -73,11 +73,11 @@ namespace LacunaMod
         }
         public override void Load(TagCompound tag)
         {
-<<<<<<< HEAD
-            TeleCloak = tag.GetInt("TeleCloak");
+
+            TeleCloak = tag.GetBool("TeleCloak");
             if (!Main.dedServ)
             {
-                if (TeleCloak == 1)
+                if (TeleCloak == true)
                 {
                     UI.Cloak.CloakUI.visible = true;
                 }
@@ -86,13 +86,13 @@ namespace LacunaMod
                     UI.Cloak.CloakUI.visible = false;
                 }
             }
-=======
+
             TeleCloak = tag.GetBool("TeleCloak");
             Bolt = tag.GetBool("Bolt");
             Zephyr = tag.GetBool("Zephyr");
             Wind = tag.GetBool("Wind");
 
->>>>>>> 53a53d1fb2693ed22e0243d61feebda7e0803e18
+
         }
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
