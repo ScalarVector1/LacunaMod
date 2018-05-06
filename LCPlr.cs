@@ -11,6 +11,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.GameInput;
+using System.Linq;
 
 namespace LacunaMod
 {
@@ -35,38 +36,25 @@ namespace LacunaMod
         private const int TeleCloakCap = 1;
         public bool TeleCloak = false;
         public int teletimer = 0;
+        private const int BoltCap = 1;
         public bool Bolt = false;
         public int bolttimer = 0;
-        public bool Zephyr = false;
-        public int tee = 0;
-        public bool flag = false;
         public bool justzapped = false;
+        public bool Zephyr = false;
 
 
 
-        public void Contact()
-        {/*
-            int num = 0;
-            bool flag = false;
-            player.TouchedTiles Touch = new TouchedTiles();
-            foreach (Point touchedTile in Touch)
-            {
-                Tile tile = Main.tile[touchedTile.X, touchedTile.Y];
-                if (tile != null && tile.active() && tile.nactive())
-                {
-                    flag = true;
-                    num = touchedTile.Y;
-                    break;
+
+        public bool flag()
+        {
+            if (player.TouchedTiles.Contains(item.type))
+                 {
+                      return true;
+                 }
+            else
+                { 
+                        return false;
                 }
-            }
-        */
-        if (player.TouchedTiles != null)// does not work, need to create a proper test for the TouchedTiles list, rest should work
-            {
-                flag = true;
-            }
-        else
-            { flag = false;
-            }
         }
 
 
@@ -270,8 +258,7 @@ namespace LacunaMod
             {
                 bolttimer--;
             }
-            if (tee > 0)
-                tee--;
+
         }
 
     }
