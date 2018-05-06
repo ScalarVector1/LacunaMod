@@ -11,8 +11,8 @@ namespace LacunaMod
 	{
         public static ModHotKey CloakKey;
 
-        private UserInterface cloakUIprivate;
-        internal UI.Cloak.CloakUI cloakUIInternal;
+        //private UserInterface cloakUIprivate;
+        //internal UI.Cloak.CloakUI cloakUIInternal;
 
         public static ModHotKey BoltKey;
 
@@ -29,7 +29,7 @@ namespace LacunaMod
         {
             CloakKey = RegisterHotKey("Cloak Teleport", "Q");
 
-            if (!Main.dedServ)
+            /*if (!Main.dedServ)
             {
                 cloakUIInternal = new UI.Cloak.CloakUI();
                 cloakUIInternal.Activate();
@@ -53,7 +53,7 @@ namespace LacunaMod
                         return true;
                     },
                 InterfaceScaleType.UI));
-            }
+            }*/
 
             BoltKey = RegisterHotKey("Bolt Smash", "Z");
 

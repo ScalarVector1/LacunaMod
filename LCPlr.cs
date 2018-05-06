@@ -41,23 +41,14 @@ namespace LacunaMod
         public int bolttimer = 0;
         public bool justzapped = false;
         public bool Zephyr = false;
-        public bool flag = false;
+        public int ImpactDelay = 0;
 
 
 
 
 
-        public void contact()
-        {
-            if (player.TouchedTiles.Contains(item.type))
-                 {
-                      flag = true;
-                 }
-            else
-                { 
-                        flag = false;
-                }
-        }
+
+
 
 
 
@@ -75,7 +66,7 @@ namespace LacunaMod
         {
 
             TeleCloak = tag.GetBool("TeleCloak");
-            if (!Main.dedServ)
+            /*if (!Main.dedServ)
             {
                 if (TeleCloak == true)
                 {
@@ -85,7 +76,7 @@ namespace LacunaMod
                 {
                     UI.Cloak.CloakUI.visible = false;
                 }
-            }
+            }*/
 
             TeleCloak = tag.GetBool("TeleCloak");
             Bolt = tag.GetBool("Bolt");
@@ -133,10 +124,13 @@ namespace LacunaMod
             {
 
             }
-
-                
-                           
-            if (LacunaMod.BoltKey.JustPressed && Bolt == true && bolttimer == 0 && flag == false)// add a solid block test here         
+           
+            if (player.TouchedTiles.Count > 0)
+            {
+                Main.PlaySound(SoundID.Item9, player.Center);
+            }
+                         
+            if (LacunaMod.BoltKey.JustPressed && Bolt == true && bolttimer == 0 && player.TouchedTiles.Count == 0)// add a solid block test here         
             {
                 justzapped = true;
                 Vector2 vel = new Vector2(0f, 0f);
@@ -157,7 +151,9 @@ namespace LacunaMod
                 player.controlLeft = false;
                 player.controlRight = false;
                 player.controlUp = false;
-                if (flag == true && justzapped == true)
+                ImpactDelay = 2;
+            }
+                if (player.TouchedTiles.Count > 0 && justzapped == true && ImpactDelay == 0)
                 {
                     Vector2 vel = new Vector2(0f, 0f);
                     Projectile.NewProjectile(player.Center, vel, mod.ProjectileType("Shock"), 1, 0f, 0, 0, 1);
@@ -168,8 +164,8 @@ namespace LacunaMod
 
 
                 
-            }
-            if (flag == true && justzapped == true)
+            
+            if (player.TouchedTiles.Count > 0 && justzapped == true && ImpactDelay == 0) 
             {
                 player.maxFallSpeed -= 65f;
                 player.velocity.Y -= 65f;
@@ -275,6 +271,10 @@ namespace LacunaMod
             if (bolttimer > 0)
             {
                 bolttimer--;
+            }
+            if (ImpactDelay > 0)
+            {
+                ImpactDelay--;
             }
 
         }

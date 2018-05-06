@@ -22,6 +22,10 @@ namespace LacunaMod.Projectiles
 
 
         }
+        public override Color? GetAlpha(Color lightColor)
+        {
+            return Color.White;
+        }
 
         public override void AI()
         {

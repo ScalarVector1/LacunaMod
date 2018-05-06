@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+﻿/*using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
@@ -84,4 +84,4 @@ namespace LacunaMod.UI.Cloak
             spriteBatch.Draw(CloakTexture, new Vector2(shopx + 11f, shopy), null, Color.White, 0f, CloakTexture.Size() / 2f, 1f, SpriteEffects.None, 0f);
         }
     }
-}
+}*/

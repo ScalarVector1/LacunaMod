@@ -34,7 +34,7 @@ namespace LacunaMod.Items.KeyItems
 		{
 
 			player.GetModPlayer<LCPlr>().TeleCloak = true;
-            UI.Cloak.CloakUI.visible = true;
+            //UI.Cloak.CloakUI.visible = true;
             return true;
 
 
