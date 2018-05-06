@@ -47,7 +47,7 @@ namespace LacunaMod
 
 
 
-        public void contact()
+        public void Contact()
         {
             if (player.TouchedTiles.Contains(item.type))
                  {
