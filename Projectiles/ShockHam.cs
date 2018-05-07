@@ -1,5 +1,4 @@
 using Microsoft.Xna.Framework;
-
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -7,19 +6,21 @@ using LacunaMod;
 
 namespace LacunaMod.Projectiles
 {
-    public class Lightning : ModProjectile
+    public class ShockHam : ModProjectile
     {
         public override void SetStaticDefaults()
         {
-            Main.projFrames[projectile.type] = 6;
+            Main.projFrames[projectile.type] = 9;
         }
         public override void SetDefaults()
         {
-            projectile.width = 60;
-            projectile.height = 156;
+            projectile.width = 172;
+            projectile.height = 30;
             projectile.friendly = true;
+            projectile.timeLeft = 18;
             projectile.tileCollide = false;
             projectile.penetrate = 2000;
+
 
 
         }
@@ -30,22 +31,17 @@ namespace LacunaMod.Projectiles
 
         public override void AI()
         {
-
             Player player = Main.player[projectile.owner];
-            projectile.position.X = player.MountedCenter.X - (float)(projectile.width / 2);
-            projectile.position.Y = player.MountedCenter.Y - (float)(projectile.height / 1.3);
-            if (++projectile.frameCounter >= 4)
+            projectile.position.Y = player.MountedCenter.Y - (float)(projectile.height / 6);
+            if (++projectile.frameCounter >= 2)
             {
                 projectile.frameCounter = 0;
-                if (++projectile.frame >= 6)
+                if (++projectile.frame >= 9)
                 {
                     projectile.frame = 0;
                 }
             }
-            if (player.velocity.Y == 0)
-            {
-                projectile.timeLeft = 0;
-            }
+
 
         }
         

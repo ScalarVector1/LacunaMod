@@ -20,6 +20,7 @@ namespace LacunaMod.Projectiles
             projectile.friendly = true;
             projectile.timeLeft = 18;
             projectile.tileCollide = false;
+            projectile.penetrate = 2000;
 
 
         }
