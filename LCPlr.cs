@@ -40,6 +40,10 @@ namespace LacunaMod
         public bool Bolt = false;
         public int bolttimer = 0;
         public bool justzapped = false;
+<<<<<<< HEAD
+=======
+        public bool justzapped2 = false;
+>>>>>>> parent of 580daab... Added forge hammer
         public bool Zephyr = false;
         public int ImpactDelay = 0;
 
@@ -100,7 +104,12 @@ namespace LacunaMod
 
             }
            
+<<<<<<< HEAD
             if (player.TouchedTiles.Count > 0)
+=======
+                         
+            if (LacunaMod.BoltKey.JustPressed && Bolt == true && bolttimer == 0 && player.velocity.Y !=0)//if the hotkey is pressed, the upgrade is consumed, bolt is not on cooldown, and the player is not still vertically      
+>>>>>>> parent of 580daab... Added forge hammer
             {
                 Main.PlaySound(SoundID.Item9, player.Center);
             }
@@ -138,6 +147,7 @@ namespace LacunaMod
                 }
 
 
+<<<<<<< HEAD
                 
             
             if (player.TouchedTiles.Count > 0 && justzapped == true && ImpactDelay == 0) 
@@ -160,6 +170,15 @@ namespace LacunaMod
                 }
 
             }
+=======
+            }
+
+
+                
+            
+
+
+>>>>>>> parent of 580daab... Added forge hammer
         }
 
         public override void UpdateEquips(ref bool wallSpeedBuff, ref bool tileSpeedBuff, ref bool tileRangeBuff)
