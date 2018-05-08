@@ -7,7 +7,7 @@ using LacunaMod;
 
 namespace LacunaMod.Projectiles
 {
-    public class Lightning : ModProjectile
+    public class LightningHam : ModProjectile
     {
         public override void SetStaticDefaults()
         {
@@ -16,7 +16,7 @@ namespace LacunaMod.Projectiles
         public override void SetDefaults()
         {
             projectile.width = 60;
-            projectile.height = 156;
+            projectile.height = 176;
             projectile.friendly = true;
             projectile.tileCollide = false;
             projectile.penetrate = 2000;
@@ -33,7 +33,7 @@ namespace LacunaMod.Projectiles
 
             Player player = Main.player[projectile.owner];
             projectile.position.X = player.MountedCenter.X - (float)(projectile.width / 2);
-            projectile.position.Y = player.MountedCenter.Y - (float)(projectile.height / 1.3);
+            projectile.position.Y = player.MountedCenter.Y - (float)(projectile.height / 1.28);
             if (++projectile.frameCounter >= 4)
             {
                 projectile.frameCounter = 0;
@@ -48,7 +48,6 @@ namespace LacunaMod.Projectiles
             }
 
         }
-        
+
     }
 }
- 
