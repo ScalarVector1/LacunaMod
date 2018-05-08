@@ -40,22 +40,21 @@ namespace LacunaMod
         public int bolttimer = 0;
         public bool justzapped = false;
         public bool justzapped2 = false;
-+        public bool justzapped3 = false;
-+        public bool justzapped4 = false;
+        public bool justzapped3 = false;
+        public bool justzapped4 = false;
         public bool Zephyr = false;
         public int ImpactDelay = 0;
-+        public bool Hammer = false;
+        public bool Hammer = false;
 
         public override TagCompound Save()
         {
             return new TagCompound {
-                 {"TeleCloak", TeleCloak},
-                 {"Bolt", Bolt},
-                 {"Zephyr", Zephyr},
--                {"Wind", Wind}
-+                {"Wind", Wind},
-+                {"Hammer", Hammer}
-             };
+                {"TeleCloak", TeleCloak},
+                {"Bolt", Bolt},
+                {"Zephyr", Zephyr},
+                {"Wind", Wind},
+                {"Hammer", Hammer}
+            };
 
         }
         public override void Load(TagCompound tag)
@@ -64,7 +63,7 @@ namespace LacunaMod
             Bolt = tag.GetBool("Bolt");
             Zephyr = tag.GetBool("Zephyr");
             Wind = tag.GetBool("Wind");
-            +Hammer = tag.GetBool("Hammer");
+            Hammer = tag.GetBool("Hammer");
         }
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
@@ -107,8 +106,7 @@ namespace LacunaMod
             }
 
 
-            -            if (LacunaMod.BoltKey.JustPressed && Bolt == true && bolttimer == 0 && player.velocity.Y != 0)//if the hotkey is pressed, the upgrade is consumed, bolt is not on cooldown, and the player is not still vertically      
-                +            if (LacunaMod.BoltKey.JustPressed && Bolt == true && bolttimer == 0 && player.velocity.Y != 0 && Hammer == false)//if the hotkey is pressed, the upgrade is consumed, bolt is not on cooldown, and the player is not still vertically      
+            if (LacunaMod.BoltKey.JustPressed && Bolt == true && bolttimer == 0 && player.velocity.Y != 0 && Hammer == false)//if the hotkey is pressed, the upgrade is consumed, bolt is not on cooldown, and the player is not still vertically      
             {
                 justzapped = true;//for actively zapping
                 justzapped2 = true;//for the whole zap projedure
@@ -155,64 +153,61 @@ namespace LacunaMod
 
 
             }
-            +// Upgraded version
-            +            if (LacunaMod.BoltKey.JustPressed && Bolt == true && bolttimer == 0 && player.velocity.Y != 0 && Hammer == true)//if the hotkey is pressed, the upgrade is consumed, bolt is not on cooldown, and the player is not still vertically and the hammer is consumed      
-                +            {
-                +justzapped3 = true;//for actively zapping
-                +justzapped4 = true;//for the whole zap projedure
-                +Vector2 vel = new Vector2(0f, 0f);//prep for projectile
-                +Projectile.NewProjectile(player.Center, vel, mod.ProjectileType("LightningHam"), 1, 0f, 0, 0, 1);//plays the zap effects on player
-                +
-                +Main.PlaySound(SoundID.Item9, player.Center);//zap sounds at start
-                +            }
-            +            else
-+            {
-                +            }
-            +            if (justzapped4 == true)
-                +            {
-                +player.noFallDmg = true;
-                +            }
-            +            if (justzapped3 == true)
-                +            {
-                +bolttimer = 180;//cooldown set to 180 frames
-                +player.maxFallSpeed += 75f;//allow fast falling
-                +player.velocity.Y += 75f;//propel downwards
-                +player.velocity.X = 0;//stop any horizontal movement
-                +player.controlJump = false;//prevents inputs untill landing
-                +player.controlDown = false;
-                +player.controlLeft = false;
-                +player.controlRight = false;
-                +player.controlUp = false;
-                +ImpactDelay = 2;//set value of the impact delay
-                +
-                +            }
-            +            if (player.TouchedTiles.Count > 0 && justzapped3 == true && ImpactDelay != 0)//set justzapped to false if they have touched the ground and there is still impact delay
-                +            {
-                +justzapped3 = false;//ends the zap and allows movement again
-                +
-                +            }
-            +            if (justzapped3 == false && justzapped4 == true)//if the player has stopped zapping but is still in the smash projedure
-                +            {
-                +ImpactDelay -= 1;//tick down the delay
-                +            }
-            +            if (ImpactDelay == 0 && justzapped4 == true)//if the delay is over and the player is still in the projedure
-                +            {
-                +Vector2 vel = new Vector2(0f, 0f);//prep for projectile
-                +Projectile.NewProjectile(player.Center, vel, mod.ProjectileType("ShockHam"), 100, 0f, 0, 0, 1);//play impact effects on player
-                +Projectile.NewProjectile(player.Center, vel, mod.ProjectileType("Shock"), 1, 0f, 0, 0, 1);//play impact effects on player
-                +Main.PlaySound(SoundID.Item14, player.Center);//play impact sound
-                +justzapped4 = false;//end the smash procedure
-                +
-                +
-                +            }
+            // Upgraded version
+            if (LacunaMod.BoltKey.JustPressed && Bolt == true && bolttimer == 0 && player.velocity.Y != 0 && Hammer == true)//if the hotkey is pressed, the upgrade is consumed, bolt is not on cooldown, and the player is not still vertically and the hammer is consumed      
+            {
+                justzapped3 = true;//for actively zapping
+                justzapped4 = true;//for the whole zap projedure
+                Vector2 vel = new Vector2(0f, 0f);//prep for projectile
+                Projectile.NewProjectile(player.Center, vel, mod.ProjectileType("LightningHam"), 1, 0f, 0, 0, 1);//plays the zap effects on player
+
+                Main.PlaySound(SoundID.Item9, player.Center);//zap sounds at start
+            }
+            else
+            {
+            }
+            if (justzapped4 == true)
+            {
+                player.noFallDmg = true;
+            }
+            if (justzapped3 == true)
+            {
+                bolttimer = 180;//cooldown set to 180 frames
+                player.maxFallSpeed += 75f;//allow fast falling
+                player.velocity.Y += 75f;//propel downwards
+                player.velocity.X = 0;//stop any horizontal movement
+                player.controlJump = false;//prevents inputs untill landing
+                player.controlDown = false;
+                player.controlLeft = false;
+                player.controlRight = false;
+                player.controlUp = false;
+                ImpactDelay = 2;//set value of the impact delay
+
+            }
+            if (player.TouchedTiles.Count > 0 && justzapped3 == true && ImpactDelay != 0)//set justzapped to false if they have touched the ground and there is still impact delay
+            {
+                justzapped3 = false;//ends the zap and allows movement again
+
+            }
+            if (justzapped3 == false && justzapped4 == true)//if the player has stopped zapping but is still in the smash projedure
+            {
+                ImpactDelay -= 1;//tick down the delay
+            }
+            if (ImpactDelay == 0 && justzapped4 == true)//if the delay is over and the player is still in the projedure
+            {
+                Vector2 vel = new Vector2(0f, 0f);//prep for projectile
+                Projectile.NewProjectile(player.Center, vel, mod.ProjectileType("ShockHam"), 100, 0f, 0, 0, 1);//play impact effects on player
+                Projectile.NewProjectile(player.Center, vel, mod.ProjectileType("Shock"), 1, 0f, 0, 0, 1);//play impact effects on player
+                Main.PlaySound(SoundID.Item14, player.Center);//play impact sound
+                justzapped4 = false;//end the smash procedure
 
 
-            -
-            -
+            }
 
 
 
-         }
+
+        }
 
         public override void UpdateEquips(ref bool wallSpeedBuff, ref bool tileSpeedBuff, ref bool tileRangeBuff)
         {
