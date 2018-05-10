@@ -44,7 +44,9 @@
     <Compile Include="Items\Armor\Fuseglass\GlassLeggings.cs" />
     <Compile Include="Items\Consumables\FuseglassBag.cs" />
     <Compile Include="Items\Consumables\RetributionPotion.cs" />
+    <Compile Include="Items\KeyItems\Bolt.cs" />
     <Compile Include="Items\KeyItems\Cloak.cs" />
+    <Compile Include="Items\KeyItems\Hammer.cs" />
     <Compile Include="Items\Materials\LacunaBlossom.cs" />
     <Compile Include="Items\Materials\FusedBottle.cs" />
     <Compile Include="Items\Materials\FusedFossil.cs" />
@@ -73,9 +75,14 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Projectiles\FusedFlailBall.cs" />
     <Compile Include="Projectiles\GlassShard.cs" />
+    <Compile Include="Projectiles\CloakRecharge.cs" />
+    <Compile Include="Projectiles\Lightning.cs" />
+    <Compile Include="Projectiles\LightningHam.cs" />
     <Compile Include="Projectiles\Misc\Greem.cs" />
     <Compile Include="Projectiles\Necro_Items\Cok.cs" />
     <Compile Include="Projectiles\Necro_Items\Necro_Boomerang_Projectile.cs" />
+    <Compile Include="Projectiles\Shock.cs" />
+    <Compile Include="Projectiles\ShockHam.cs" />
     <Compile Include="QuickRecipe.cs" />
     <Compile Include="UI\Cloak\CloakUI.cs" />
   </ItemGroup>
@@ -131,7 +138,9 @@
     <Content Include="Items\Armor\Fuseglass\GlassHelmet_Head.png" />
     <Content Include="Items\Armor\Fuseglass\GlassLeggings.png" />
     <Content Include="Items\Armor\Fuseglass\GlassLeggings_Legs.png" />
+    <Content Include="Items\KeyItems\Bolt.png" />
     <Content Include="Items\KeyItems\Cloak.png" />
+    <Content Include="Items\KeyItems\Hammer.png" />
     <Content Include="Items\Tileitems\Glass_Ore.png" />
     <Content Include="Items\Tileitems\King_Tile_Plain.png" />
     <Content Include="Items\Tileitems\King_Tile_Plate.png" />
@@ -163,6 +172,7 @@
     <Content Include="Projectiles\Ammo\King_Arrow.png" />
     <Content Include="Projectiles\Boss\Glass_Boss_1.png" />
     <Content Include="Projectiles\Boss\Glass_Boss_2.png" />
+    <Content Include="Projectiles\CloakRecharge.png" />
     <Content Include="Projectiles\FusedFlailBall.png" />
     <Content Include="Projectiles\FusedFlailBall_Chain.png" />
     <Content Include="Projectiles\GlassShard.png" />
@@ -170,10 +180,14 @@
     <Content Include="Projectiles\Glass_Items\Glass_Flail_Head.png" />
     <Content Include="Projectiles\Glass_Items\Glass_Magicsword.gif" />
     <Content Include="Projectiles\Glass_Items\Glass_Shard.png" />
+    <Content Include="Projectiles\Lightning.png" />
+    <Content Include="Projectiles\LightningHam.png" />
     <Content Include="Projectiles\Misc\Greem.png" />
     <Content Include="Projectiles\Necro_Items\Cok.png" />
     <Content Include="Projectiles\Necro_Items\Necro_Boomerang_Projectile.png" />
     <Content Include="Projectiles\Necro_Items\Necro_Summon_Projectile.gif" />
+    <Content Include="Projectiles\Shock.png" />
+    <Content Include="Projectiles\ShockHam.png" />
     <Content Include="UI\Boss_Icon\Guardian_Icon.png" />
     <Content Include="UI\Cloak\Cloak.png" />
     <Content Include="UI\Cloak\Cloak_1.png" />

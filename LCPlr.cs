@@ -35,6 +35,7 @@ namespace LacunaMod
         private const int TeleCloakCap = 1;
         public bool TeleCloak = false;
         public int teletimer = 0;
+        public Vector2 TelePrevLocation;
         private const int BoltCap = 1;
         public bool Bolt = false;
         public int bolttimer = 0;
@@ -69,7 +70,7 @@ namespace LacunaMod
         {
             if (LacunaMod.CloakKey.JustPressed && TeleCloak == true && teletimer == 0)
             {
-
+                TelePrevLocation = player.Center;
                 //Copied form vanilla RoD code
                 teletimer = 180;
                 Vector2 vector26 = default(Vector2);
@@ -291,7 +292,18 @@ namespace LacunaMod
             player.magicCrit += percent;
             player.thrownCrit += percent;
         }
-
+        public override void FrameEffects()
+        {
+            if (LacunaMod.CloakKey.JustPressed && TeleCloak == true && teletimer == 0)
+            {
+                for (int rr = 0; rr > 40; rr++)
+                {
+                    Dust dust;
+                    // You need to set position depending on what you are doing. You may need to subtract width/2 and height/2 as well to center the spawn rectangle.
+                    dust = Main.dust[Terraria.Dust.NewDust(TelePrevLocation, 30, 30, 240, 0f, -10f, 0, new Color(255, 255, 255), 1f)];
+                }
+            }
+        }
         public override void ResetEffects()
         {
             retribution = false;
