@@ -71,7 +71,7 @@ namespace LacunaMod
             {
 
                 //Copied form vanilla RoD code
-                teletimer = 300;
+                teletimer = 180;
                 Vector2 vector26 = default(Vector2);
                 vector26.X = (float)Main.mouseX + Main.screenPosition.X;
                 if (player.gravDir == 1f)
@@ -203,8 +203,11 @@ namespace LacunaMod
 
 
             }
-
-
+            if (teletimer == 1)
+            {
+                Vector2 vel = new Vector2(0f, 0f);
+                Projectile.NewProjectile(player.Center, vel, mod.ProjectileType("CloakRecharge"), 0, 0f, 0, 0, 1);
+            }
 
 
         }
