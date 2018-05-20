@@ -35,6 +35,7 @@ namespace LacunaMod
         private const int TeleCloakCap = 1;
         public bool TeleCloak = false;
         public int teletimer = 0;
+        public Vector2 TelePrevLocation;
         private const int BoltCap = 1;
         public bool Bolt = false;
         public int bolttimer = 0;
@@ -72,9 +73,9 @@ namespace LacunaMod
         {
             if (LacunaMod.CloakKey.JustPressed && TeleCloak == true && teletimer == 0)
             {
-
+                TelePrevLocation = player.Center;
                 //Copied form vanilla RoD code
-                teletimer = 300;
+                teletimer = 180;
                 Vector2 vector26 = default(Vector2);
                 vector26.X = (float)Main.mouseX + Main.screenPosition.X;
                 if (player.gravDir == 1f)
@@ -206,6 +207,7 @@ namespace LacunaMod
 
 
             }
+<<<<<<< HEAD
             if (LacunaMod.FlyKey.JustPressed && Zephyr == true)// glide toggle hotkey and check for item
             {
                 if (glidetoggle == false)//toggle glide
@@ -231,6 +233,13 @@ namespace LacunaMod
 
 
 
+=======
+            if (teletimer == 1)
+            {
+                Vector2 vel = new Vector2(0f, 0f);
+                Projectile.NewProjectile(player.Center, vel, mod.ProjectileType("CloakRecharge"), 0, 0f, 0, 0, 1);
+            }
+>>>>>>> 8b2bc6a122d5511ca9ea650d2adbf20763139c3f
 
 
         }
@@ -314,7 +323,18 @@ namespace LacunaMod
             player.magicCrit += percent;
             player.thrownCrit += percent;
         }
-
+        public override void FrameEffects()
+        {
+            if (LacunaMod.CloakKey.JustPressed && TeleCloak == true && teletimer == 0)
+            {
+                for (int rr = 0; rr > 40; rr++)
+                {
+                    Dust dust;
+                    // You need to set position depending on what you are doing. You may need to subtract width/2 and height/2 as well to center the spawn rectangle.
+                    dust = Main.dust[Terraria.Dust.NewDust(TelePrevLocation, 30, 30, 240, 0f, -10f, 0, new Color(255, 255, 255), 1f)];
+                }
+            }
+        }
         public override void ResetEffects()
         {
             retribution = false;
