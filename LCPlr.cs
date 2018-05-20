@@ -45,6 +45,8 @@ namespace LacunaMod
         public bool Zephyr = false;
         public int ImpactDelay = 0;
         public bool Hammer = false;
+        public bool glide = false;
+        public bool glidetoggle = false;
 
         public override TagCompound Save()
         {
@@ -65,6 +67,7 @@ namespace LacunaMod
             Wind = tag.GetBool("Wind");
             Hammer = tag.GetBool("Hammer");
         }
+
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
             if (LacunaMod.CloakKey.JustPressed && TeleCloak == true && teletimer == 0)
@@ -203,6 +206,29 @@ namespace LacunaMod
 
 
             }
+            if (LacunaMod.FlyKey.JustPressed && Zephyr == true)// glide toggle hotkey and check for item
+            {
+                if (glidetoggle == false)//toggle glide
+                {
+                    glide = true;
+                    glidetoggle = true;
+                }
+                else if (glidetoggle == true)
+                {
+                    glide = false;
+                    glidetoggle = false;
+                }
+            }
+
+            if (glide == false && Zephyr == true)//set infinate flight if item is true and gliding is off
+            {
+                player.wingTime = 100000;
+            }
+            else if (glide == true && Zephyr == true)//set wing time to zero with gliding on
+            {
+                player.wingTime = 0;
+            }
+
 
 
 

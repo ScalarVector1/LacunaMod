@@ -11,6 +11,7 @@ namespace LacunaMod
 	{
         public static ModHotKey CloakKey;
         public static ModHotKey BoltKey;
+        public static ModHotKey FlyKey;
 
         public LacunaMod()
 		{
@@ -25,6 +26,7 @@ namespace LacunaMod
         {
             CloakKey = RegisterHotKey("Cloak Teleport", "Q");
             BoltKey = RegisterHotKey("Bolt Smash", "Z");
+            FlyKey = RegisterHotKey("Toggle Zephyr Glide", "N");
         }
 
         public override void AddRecipeGroups()
@@ -54,6 +56,7 @@ namespace LacunaMod
         {
             CloakKey = null;
             BoltKey = null;
+            FlyKey = null;
         }
     }
 }
