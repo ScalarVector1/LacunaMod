@@ -12,12 +12,9 @@ namespace LacunaMod
 	{
         public static ModHotKey CloakKey;
         public static ModHotKey BoltKey;
-<<<<<<< HEAD
         private UserInterface exampleUserInterface;
         internal UpgradeUI exampleUI;
-=======
         public static ModHotKey FlyKey;
->>>>>>> 42d513ba4916678d0bafbbe8032953154a25211b
 
         public LacunaMod()
 		{
@@ -32,7 +29,6 @@ namespace LacunaMod
         {
             CloakKey = RegisterHotKey("Cloak Teleport", "Q");
             BoltKey = RegisterHotKey("Bolt Smash", "Z");
-<<<<<<< HEAD
             if (!Main.dedServ)
             {
                 exampleUI = new UpgradeUI();
@@ -40,9 +36,7 @@ namespace LacunaMod
                 exampleUserInterface = new UserInterface();
                 exampleUserInterface.SetState(exampleUI);
             }
-=======
             FlyKey = RegisterHotKey("Toggle Zephyr Glide", "N");
->>>>>>> 42d513ba4916678d0bafbbe8032953154a25211b
         }
 
         public override void AddRecipeGroups()
