@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using LacunaMod.UI.Upgrades;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
@@ -11,6 +12,8 @@ namespace LacunaMod
 	{
         public static ModHotKey CloakKey;
         public static ModHotKey BoltKey;
+        private UserInterface exampleUserInterface;
+        internal UpgradeUI exampleUI;
 
         public LacunaMod()
 		{
@@ -25,6 +28,13 @@ namespace LacunaMod
         {
             CloakKey = RegisterHotKey("Cloak Teleport", "Q");
             BoltKey = RegisterHotKey("Bolt Smash", "Z");
+            if (!Main.dedServ)
+            {
+                exampleUI = new UpgradeUI();
+                exampleUI.Activate();
+                exampleUserInterface = new UserInterface();
+                exampleUserInterface.SetState(exampleUI);
+            }
         }
 
         public override void AddRecipeGroups()
@@ -49,6 +59,31 @@ namespace LacunaMod
                     ItemID.SailfishBoots
             });
             RecipeGroup.RegisterGroup("Speed Boots", group);
+        }
+        public override void UpdateUI(GameTime gameTime)
+        {
+            if (exampleUserInterface != null && UpgradeUI.visible)
+                exampleUserInterface.Update(gameTime);
+        }
+
+        public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
+        {
+            int MouseTextIndex = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
+            if (MouseTextIndex != -1)
+            {
+                layers.Insert(MouseTextIndex, new LegacyGameInterfaceLayer(
+                    "LacunaMod: Upgrade Charge",
+                    delegate
+                    {
+                        if (UpgradeUI.visible)
+                        {
+                            exampleUI.Draw(Main.spriteBatch);
+                        }
+                        return true;
+                    },
+                    InterfaceScaleType.UI)
+                );
+            }
         }
         public override void Unload()
         {

@@ -1,1 +1,8 @@
 .vs/*
+obj/Debug/LacunaMod.csprojResolveAssemblyReference.cache
+obj/Debug/LacunaMod.csproj.CoreCompileInputs.cache
+obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+.vs/LacunaMod/v15/Server/sqlite3/storage.ide-wal
+.vs/LacunaMod/v15/Server/sqlite3/storage.ide-shm
+.vs/LacunaMod/v15/Server/sqlite3/storage.ide
+.vs/LacunaMod/v15/.suo
