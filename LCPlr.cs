@@ -75,7 +75,7 @@ namespace LacunaMod
             {
                 TelePrevLocation = player.Center;
                 //Copied form vanilla RoD code
-                teletimer = 180;
+                teletimer = 300;
                 Vector2 vector26 = default(Vector2);
                 vector26.X = (float)Main.mouseX + Main.screenPosition.X;
                 if (player.gravDir == 1f)
@@ -207,7 +207,7 @@ namespace LacunaMod
 
 
             }
-<<<<<<< HEAD
+
             if (LacunaMod.FlyKey.JustPressed && Zephyr == true)// glide toggle hotkey and check for item
             {
                 if (glidetoggle == false)//toggle glide
@@ -233,13 +233,13 @@ namespace LacunaMod
 
 
 
-=======
+
             if (teletimer == 1)
             {
                 Vector2 vel = new Vector2(0f, 0f);
                 Projectile.NewProjectile(player.Center, vel, mod.ProjectileType("CloakRecharge"), 0, 0f, 0, 0, 1);
             }
->>>>>>> 8b2bc6a122d5511ca9ea650d2adbf20763139c3f
+
 
 
         }
