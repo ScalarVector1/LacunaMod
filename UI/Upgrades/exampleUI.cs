@@ -37,10 +37,15 @@ namespace LacunaMod.UI.Upgrades
         static Texture2D BoltMeter60 = ModLoader.GetTexture("LacunaMod/UI/Upgrades/Bolt/60");
         static Texture2D BoltMeter80 = ModLoader.GetTexture("LacunaMod/UI/Upgrades/Bolt/80");
         static Texture2D BoltMeter100 = ModLoader.GetTexture("LacunaMod/UI/Upgrades/Bolt/100");
+        //Feather textures
+        static Texture2D FeatherLocked = ModLoader.GetTexture("LacunaMod/UI/Upgrades/Feather/lock");
+        static Texture2D FeatherOff = ModLoader.GetTexture("LacunaMod/UI/Upgrades/Feather/off");
+        static Texture2D FeatherOn = ModLoader.GetTexture("LacunaMod/UI/Upgrades/Feather/on");
 
 
         UIImage CloakMeter = new UIImage(CloakMeterLockedTexture);
         UIImage BoltMeter = new UIImage(BoltMeterLocked);
+        UIImage Feather = new UIImage(FeatherLocked);
 
         public override void OnInitialize()
         {
@@ -79,6 +84,12 @@ namespace LacunaMod.UI.Upgrades
             BoltMeter.Width.Set(24, 0f);
             BoltMeter.Height.Set(46, 0f);
             UpgradePanel.Append(BoltMeter);
+
+            Feather.Left.Set(6, 0f);
+            Feather.Top.Set(110, 0f);
+            Feather.Width.Set(22, 0f);
+            Feather.Height.Set(50, 0f);
+            UpgradePanel.Append(Feather);
 
             base.Append(UpgradePanel);
         }
@@ -180,7 +191,31 @@ namespace LacunaMod.UI.Upgrades
             {
                 BoltMeter.SetImage(BoltMeter100);
             }
-
+            else if (Main.LocalPlayer.GetModPlayer<LCPlr>().justzapped == true && Main.LocalPlayer.GetModPlayer<LCPlr>().Bolt == true)//in the air
+            {
+                BoltMeter.SetImage(BoltMeter0);
+            }
+            else if (Main.LocalPlayer.GetModPlayer<LCPlr>().justzapped3 == true && Main.LocalPlayer.GetModPlayer<LCPlr>().Bolt == true)//in the air w/ hammer
+            {
+                BoltMeter.SetImage(BoltMeter0);
+            }
+            else if (Main.LocalPlayer.GetModPlayer<LCPlr>().Bolt == false)//locked
+            {
+                BoltMeter.SetImage(BoltMeterLocked);
+            }
+            //Feather
+            if (Main.LocalPlayer.GetModPlayer<LCPlr>().Zephyr == false)
+            {
+                Feather.SetImage(FeatherLocked);
+            }
+            else if (Main.LocalPlayer.GetModPlayer<LCPlr>().Zephyr == true && Main.LocalPlayer.GetModPlayer<LCPlr>().glide == true)
+            {
+                Feather.SetImage(FeatherOff);
+            }
+            else if (Main.LocalPlayer.GetModPlayer<LCPlr>().Zephyr == true && Main.LocalPlayer.GetModPlayer<LCPlr>().glide == false)
+            {
+                Feather.SetImage(FeatherOn);
+            }
             if (UpgradePanel.ContainsPoint(MousePosition))
             {
                 Main.LocalPlayer.mouseInterface = true;
