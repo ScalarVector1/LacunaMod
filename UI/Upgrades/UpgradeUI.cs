@@ -51,7 +51,7 @@ namespace LacunaMod.UI.Upgrades
         {
             UpgradePanel = new UIElement();
             UpgradePanel.SetPadding(0);
-            UpgradePanel.Left.Set(400f, 0f);
+            UpgradePanel.Left.Set(1584f, 0f);
             UpgradePanel.Top.Set(100f, 0f);
             UpgradePanel.Width.Set(34f, 0f);
             UpgradePanel.Height.Set(200f, 0f);

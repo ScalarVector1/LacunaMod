@@ -48,6 +48,7 @@ namespace LacunaMod
         public bool Hammer = false;
         public bool glide = false;
         public bool glidetoggle = false;
+        public bool MorphSmelt = false;
 
         public override TagCompound Save()
         {
@@ -352,6 +353,19 @@ namespace LacunaMod
             {
                 bolttimer--;
             }
+            if (player.ZoneCorrupt == true)
+            {
+                MorphSmelt = true;
+            }
+            else if (player.ZoneCrimson == true)
+            {
+                MorphSmelt = true;
+            }
+            else
+            {
+                MorphSmelt = false;
+            }
+
 
 
 
